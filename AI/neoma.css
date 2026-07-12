@@ -1,0 +1,474 @@
+/* ==========================
+        NEOMA BUTTON
+========================== */
+
+#neoma {
+
+    position: fixed;
+
+    bottom: 35px;
+
+    right: 35px;
+
+    z-index: 99999;
+
+}
+
+#neoma-btn {
+
+    width: 82px;
+
+    height: 82px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: #111827;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    position: relative;
+
+    box-shadow:
+
+        0 0 25px rgba(0, 200, 255, .35),
+
+        0 0 70px rgba(0, 200, 255, .15);
+
+    transition: .35s;
+
+}
+
+#neoma-btn:hover {
+
+    transform: scale(1.08);
+
+    box-shadow:
+
+        0 0 35px rgba(0, 200, 255, .6),
+
+        0 0 90px rgba(0, 200, 255, .25);
+
+}
+
+#neoma-btn img {
+
+    width: 60px;
+
+    height: 60px;
+
+    object-fit: contain;
+
+    margin: auto;
+
+}
+
+.pulse {
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 50%;
+
+    border: 2px solid rgba(0, 200, 255, .35);
+
+    animation: neomaPulse 2.5s infinite;
+
+}
+
+@keyframes neomaPulse {
+
+    0% {
+
+        transform: scale(.8);
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform: scale(1.7);
+
+        opacity: 0;
+
+    }
+
+}
+
+/*============================
+
+        NEOMA PANEL
+
+=============================*/
+
+#neoma-panel {
+
+    position: fixed;
+
+    bottom: 130px;
+
+    right: 35px;
+
+    width: 380px;
+
+    height: 500px;
+
+    background: #131a27;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border: 1px solid rgba(0, 200, 255, .18);
+
+    box-shadow:
+
+        0 20px 60px rgba(0, 0, 0, .5),
+
+        0 0 40px rgba(0, 200, 255, .12);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform:
+
+        translateY(40px) scale(.92);
+
+    transition: .35s;
+
+    z-index: 99998;
+
+}
+
+#neoma-panel.open {
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform:
+
+        translateY(0) scale(1);
+
+}
+
+.neoma-header {
+
+    height: 85px;
+
+    padding: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: #0d121c;
+
+    border-bottom: 1px solid rgba(255, 255, 255, .06);
+
+}
+
+.neoma-profile {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+.neoma-profile img {
+
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+}
+
+.neoma-profile h3 {
+
+    color: white;
+
+    font-family: 'Cinzel';
+
+    font-size: 18px;
+
+    margin: 0;
+
+}
+
+.neoma-profile span {
+
+    color: #00C8FF;
+
+    font-size: 12px;
+
+}
+
+#close-neoma {
+
+    background: none;
+
+    border: none;
+
+    font-size: 30px;
+
+    color: white;
+
+    cursor: pointer;
+
+}
+
+#chat-area {
+
+    flex: 1;
+
+    padding: 25px;
+
+    overflow-y: auto;
+
+}
+
+.bot-message {
+
+    background: #1d2738;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    color: white;
+
+    line-height: 1.7;
+
+    max-width: 90%;
+
+}
+
+.chat-input {
+
+    height: 80px;
+
+    display: flex;
+
+    padding: 15px;
+
+    gap: 12px;
+
+    background: #0d121c;
+
+}
+
+.chat-input input {
+
+    flex: 1;
+
+    background: #1d2738;
+
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 0 18px;
+
+    color: white;
+
+    outline: none;
+
+}
+
+.chat-input button {
+
+    width: 55px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #00C8FF;
+
+    cursor: pointer;
+
+    font-size: 22px;
+
+}
+
+.user-message {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin: 20px 0;
+
+}
+
+.user-message p {
+
+    background: #00C8FF;
+
+    color: #06131b;
+
+    padding: 14px 18px;
+
+    border-radius: 20px 20px 4px 20px;
+
+    max-width: 75%;
+
+    font-weight: 500;
+
+}
+
+.typing {
+
+    display: flex;
+
+    gap: 6px;
+
+    margin: 18px 0;
+
+}
+
+.typing span {
+
+    width: 10px;
+
+    height: 10px;
+
+    background: #00C8FF;
+
+    border-radius: 50%;
+
+    animation: typing .8s infinite;
+
+}
+
+.typing span:nth-child(2) {
+
+    animation-delay: .2s;
+
+}
+
+.typing span:nth-child(3) {
+
+    animation-delay: .4s;
+
+}
+
+@keyframes typing {
+
+    0% {
+
+        opacity: .3;
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform: translateY(-6px);
+
+    }
+
+    100% {
+
+        opacity: .3;
+
+        transform: translateY(0);
+
+    }
+}
+
+.neoma-card {
+
+    background: #1b2433;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    margin: 18px 0;
+
+    border: 1px solid rgba(0, 200, 255, .12);
+
+    animation: fadeUp .35s;
+
+}
+
+.neoma-card h3 {
+
+    color: #00C8FF;
+
+    margin-bottom: 10px;
+
+    font-size: 18px;
+
+}
+
+.neoma-card p {
+
+    color: #ddd;
+
+    line-height: 1.6;
+
+    margin-bottom: 15px;
+
+}
+
+.card-buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
+.card-btn {
+
+    background: #00C8FF;
+
+    color: #07131a;
+
+    border: none;
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+}
+
+.card-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 0 18px rgba(0, 200, 255, .4);
+
+}

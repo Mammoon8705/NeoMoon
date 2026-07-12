@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<img loading="lazy">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEOMOON — Web Design & AI Automation Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/favicon.ico">
+    <meta property="og:image" content="/preview.jpg">
+    <link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="AI/neoma.js"></script>
+
+<body>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu">
+
+        <div class="mobile-menu-header">
+
+            <a href="#" class="nav-logo">
+                NEO<span>MOON</span>
+            </a>
+
+            <div class="mobile-close">&times;</div>
+
+        </div>
+
+        <nav class="mobile-nav">
+
+            <a href="#hero">Home</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#about">About</a>
+
+        </nav>
+
+        <a href="#" id="open-ai-mobile" class="mobile-menu-cta">
+            Talk to Neoma
+        </a>
+
+    </div>
+
+    <div class="overlay"></div>
+
+    <!-- ── NAVBAR ── -->
+    <nav id="mainNav">
+        <a href="#hero" class="nav-logo">
+            <img src="Pic/logo.png" alt="Neomoon Logo">
+
+            <div class="logo-text">
+                <span>NEO</span>MOON
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#" id="open-ai">Neoma AI</a></li>
+        </ul>
+        <a href="#" id="open-ai-nav" class="nav-cta">Talk to Neoma</a>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <section id="hero">
+        <div class="hero-bg"></div>
+        <div class="fog"></div>
+        <div id="particles"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-eyebrow">UK-Based Web &amp; AI Agency</p>
+            <h1 class="hero-title">Premium Websites & AI Systems<br><em>Scale Modern Businesses.</em></h1>
+            <p class="hero-subtitle">We build clean, modern websites and intelligent automation that help
+                businesses attract more customers, save time, and grow with confidence.</p>
+            <div class="hero-actions">
+                <a href="#process" class="btn-primary">See Our Path</a>
+                <a href="#" id="hero-ai" class="btn-outline">Talk to Neoma</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-dot"></div>
+            <span class="scroll-text">Scroll</span>
+        </div>
+    </section>
+
+
+    <!-- ── SERVICES ── -->
+    <section id="services">
+        <div class="services-header">
+            <span class="section-eyebrow reveal">What We Do</span>
+            <h2 class="section-title reveal">Our Core <em>Services</em></h2>
+            <div class="blue-divider reveal"></div>
+            <p class="section-subtitle reveal">Everything you need to dominate online — built by experts, designed for
+                growth.</p>
+        </div>
+        <div class="services-grid">
+            <div class="svc-card reveal reveal-delay-1">
+                <div class="svc-icon">🌐</div>
+                <div class="svc-title">Website Design &amp; Google Business</div>
+                <p class="svc-desc">Modern, high-converting websites paired with a fully optimised Google Business
+                    presence.</p>
+                <ul class="svc-list">
+                    <li>Custom responsive web design</li>
+                    <li>Google Business profile setup &amp; optimisation</li>
+                    <li>Mobile-first, lightning-fast builds</li>
+                </ul>
+                <div class="svc-card-line"></div>
+            </div>
+            <div class="svc-card reveal reveal-delay-2">
+                <div class="svc-icon">📈</div>
+                <div class="svc-title">SEO, Analytics &amp; AI Chatbot</div>
+                <p class="svc-desc">Rank higher on Google, track every visitor, and let AI convert leads while you
+                    sleep.</p>
+                <ul class="svc-list">
+                    <li>On-page SEO &amp; keyword strategy</li>
+                    <li>Google Analytics &amp; Search Console setup</li>
+                    <li>AI chatbot for 24/7 lead capture</li>
+                </ul>
+                <div class="svc-card-line"></div>
+            </div>
+            <div class="svc-card reveal reveal-delay-3">
+                <div class="svc-icon">🔄</div>
+                <div class="svc-title">Monthly Growth &amp; Marketing</div>
+                <p class="svc-desc">Ongoing partnership — updates, campaigns, and monthly reports to keep you growing.
+                </p>
+                <ul class="svc-list">
+                    <li>Regular website updates &amp; content</li>
+                    <li>Targeted marketing campaigns</li>
+                    <li>Monthly performance reports</li>
+                </ul>
+                <div class="svc-card-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── PRICING ── -->
+    <section id="pricing">
+        <div class="pricing-header">
+            <span class="section-eyebrow reveal" style="color:var(--cyan)">Transparent Pricing</span>
+            <h2 class="section-title reveal">No Hidden Fees. <em>Just Results.</em></h2>
+            <div class="blue-divider reveal"></div>
+        </div>
+        <div class="pricing-grid">
+            <div class="price-card reveal reveal-delay-1">
+                <div class="price-plan">🚀 Launch</div>
+                <div class="price-name">Launch Plan</div>
+                <p class="price-desc">Everything you need to get online and visible fast.</p>
+                <div class="price-amount">£749<span> + £249/mo</span></span></div>
+                <ul class="price-features">
+                    <li>Custom responsive website</li>
+                    <li>Google Business setup</li>
+                    <li>Mobile-first design</li>
+                    <li>Contact form &amp; basic SEO</li>
+                    <li>Website updates</li>
+                </ul>
+                <button class="price-btn primary ai-plan" data-plan="Launch">
+                    Discuss This Plan
+                </button>
+            </div>
+            <div class="price-card popular reveal reveal-delay-2">
+                <div class="popular-badge">Most Popular</div>
+                <div class="price-plan">📊 Grow</div>
+                <div class="price-name">Grow Plan</div>
+                <p class="price-desc">The full growth stack — website, SEO, analytics, and AI.</p>
+                <div class="price-amount">£1199<span> + £299/mo</span></div>
+                <ul class="price-features">
+                    <li>Everything in Launch</li>
+                    <li>Full SEO strategy &amp; implementation</li>
+                    <li>AI SEO</li>
+                    <li>Google Analytics setup</li>
+                    <li>AI chatbot integration</li>
+                </ul>
+                <button class="price-btn primary ai-plan" data-plan="Grow">
+                    Discuss This Plan
+                </button>
+            </div>
+            <div class="price-card reveal reveal-delay-3">
+                <div class="price-plan">🔥 Scale</div>
+                <div class="price-name">Scale Plan</div>
+                <p class="price-desc">Full-service agency partner for ambitious brands.</p>
+                <div class="price-amount">£1499<span> + £399/mo</span></div>
+                <ul class="price-features">
+                    <li>Everything in Grow</li>
+                    <li>Monthly marketing campaigns</li>
+                    <li>AI - Automations</li>
+                    <li>Monthly performance reports</li>
+                    <li>Dedicated Account Manager</li>
+                </ul>
+                <button class="price-btn primary ai-plan" data-plan="Scale">
+                    Discuss This Plan
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- //Banner// -->
+    <section class="offer-ticker">
+        <div class="ticker-track">
+
+            <span> <strong>FREE</strong> 30-MIN STRATEGY CALL</span>
+            <span> LIMITED OFFER • <strong>10%</strong>, <strong>20%</strong> & <strong>30%</strong> OFF on 1, 2 & 3
+                referrals respectively•</span>
+            <span> <strong>FREE</strong> WEBSITE AUDIT</span>
+            <span>• ONLY THIS MONTH •</span>
+            <span>• <strong>AI</strong> BUSINESS CONSULTATION 24/7 •</span>
+
+            <span> <strong>FREE</strong> 30-MIN STRATEGY CALL</span>
+            <span> LIMITED OFFER • <strong>10%</strong>, <strong>20%</strong> & <strong>30%</strong> OFF on 1, 2 & 3
+                referrals respectively •</span>
+            <span> <strong>FREE</strong> WEBSITE AUDIT</span>
+            <span>• ONLY THIS MONTH •</span>
+            <span>• <strong>AI</strong> BUSINESS CONSULTATION 24/7 •</span>
+
+            <span> <strong>FREE</strong> 30-MIN STRATEGY CALL</span>
+            <span> LIMITED OFFER • <strong>10%</strong>, <strong>20%</strong> & <strong>30%</strong> OFF on 1, 2 & 3
+                referrals respectively •</span>
+            <span> <strong>FREE</strong> WEBSITE AUDIT</span>
+            <span>• ONLY THIS MONTH •</span>
+            <span>• <strong>AI</strong> BUSINESS CONSULTATION 24/7 •</span>
+
+        </div>
+    </section>
+
+    <!-- ── WHY CHOOSE US ── -->
+    <section id="why">
+        <div class="why-header">
+            <span class="section-eyebrow reveal">Why NEOMOON</span>
+            <h2 class="section-title reveal">Built On <em>Trust</em></h2>
+            <div class="blue-divider reveal"></div>
+        </div>
+        <div class="why-grid">
+            <div class="why-card reveal reveal-delay-1">
+                <div class="why-icon">🇬🇧</div>
+                <div class="why-title">UK-Based Agency</div>
+                <p class="why-desc">Local expertise with global standards. You deal with real people, not bots.</p>
+            </div>
+            <div class="why-card reveal reveal-delay-2">
+                <div class="why-icon">⚡</div>
+                <div class="why-title">No Tech Knowledge Needed</div>
+                <p class="why-desc">We handle every technical detail. You focus on running your business.</p>
+            </div>
+            <div class="why-card reveal reveal-delay-3">
+                <div class="why-icon">📅</div>
+                <div class="why-title">Results in 30 Days</div>
+                <p class="why-desc">Fast delivery without sacrificing quality. Revenue increase within a month.</p>
+            </div>
+            <div class="why-card reveal reveal-delay-4">
+                <div class="why-icon">💎</div>
+                <div class="why-title">Transparent Pricing</div>
+                <p class="why-desc">What you see is what you pay. No hidden fees, no surprises.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── PROCESS ── -->
+    <section id="process">
+        <div class="process-stars"></div>
+        <div class="process-header">
+            <span class="section-eyebrow reveal" style="color:var(--cyan)">How We Work</span>
+            <h2 class="section-title reveal">Our <em>Process</em></h2>
+            <div class="blue-divider reveal"></div>
+            <p class="section-subtitle reveal">Seven steps from idea to a high-performing digital presence.</p>
+        </div>
+
+        <!-- Desktop Orbit -->
+        <div class="process-orbit" id="processOrbit">
+            <!-- Rings -->
+            <div class="orbit-ring orbit-ring-1"></div>
+            <div class="orbit-ring orbit-ring-2"></div>
+            <div class="orbit-ring orbit-ring-3"></div>
+            <!-- Center -->
+            <div class="orbit-center">
+                <div class="orbit-center-icon">🌐</div>
+                <div class="orbit-center-text">Your<br>Website</div>
+            </div>
+            <!-- Steps placed via JS -->
+        </div>
+
+        <!-- Mobile Timeline -->
+        <div class="process-timeline" id="processTimeline">
+            <div class="timeline-item">
+                <div class="timeline-dot">01</div>
+                <div class="timeline-content">
+                    <div class="timeline-icon">🎯</div>
+                    <div class="timeline-title">Requirement Gathering</div>
+                    <div class="timeline-desc">Understand your business goals, audience, and what your website needs to
+                        achieve.</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot">02</div>
+                <div class="timeline-content">
+                    <div class="timeline-icon">📅</div>
+                    <div class="timeline-title">Planning</div>
+                    <div class="timeline-desc">Create sitemap, structure, and choose the best technologies for your
+                        project.</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot">03</div>
+                <div class="timeline-content">
+                    <div class="timeline-icon">🎨</div>
+                    <div class="timeline-title">Design</div>
+                    <div class="timeline-desc">Wireframes and UI design focused on clarity, branding, and conversions.
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot">04</div>
+                <div class="timeline-content">
+                    <div class="timeline-icon">💻</div>
+                    <div class="timeline-title">Development</div>
+                    <div class="timeline-desc">Build fast, responsive, and scalable website with clean code.</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot">05</div>
+                <div class="timeline-content">
+                    <div class="timeline-icon">🧪</div>
+                    <div class="timeline-title">Testing</div>
+                    <div class="timeline-desc">Ensure everything works perfectly across devices and browsers.</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot">06</div>
+                <div class="timeline-content">
+                    <div class="timeline-icon">🚀</div>
+                    <div class="timeline-title">Launch</div>
+                    <div class="timeline-desc">Deploy your website live with final checks and optimisation.</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot">07</div>
+                <div class="timeline-content">
+                    <div class="timeline-icon">🛡️</div>
+                    <div class="timeline-title">Maintenance</div>
+                    <div class="timeline-desc">Ongoing updates, SEO improvements, and performance monitoring.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── PORTFOLIO ── -->
+    <section id="portfolio">
+        <div class="portfolio-header">
+            <span class="section-eyebrow reveal">Sample Websites</span>
+            <h2 class="section-title reveal">Explore Our <em>Designs</em></h2>
+            <div class="blue-divider reveal"></div>
+        </div>
+        <div class="swiper portfolioSwiper">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <img src="Pic/oud1.png" alt="Luxury perfume website" loading="lazy">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="Pic/oud2.png" alt="Premium fragrance store" loading="lazy">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="Pic/car1.png" alt="Luxury car dealership website" loading="lazy">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="Pic/car2.png" alt="High-end vehicle marketplace" loading="lazy">
+                </div>
+
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <!-- ── TESTIMONIALS ── -->
+    <section id="testimonials">
+        <div class="testi-header">
+            <span class="section-eyebrow reveal" style="color:var(--cyan)">Client Reviews</span>
+            <h2 class="section-title reveal">What Our <em>Clients Say</em></h2>
+            <div class="blue-divider reveal"></div>
+        </div>
+        <div class="testi-grid">
+            <div class="testi-card reveal reveal-delay-1">
+                <div class="stars">★★★★★</div>
+                <p class="testi-text">"NEOMOON transformed our online presence completely. The new site is stunning and
+                    our enquiries tripled within the first month. Absolutely worth every penny."</p>
+                <div class="testi-author">
+                    <div class="testi-avatar">JH</div>
+                    <div>
+                        <div class="testi-name">James Harrison</div>
+                        <div class="testi-role">Owner, Sterling Legal Group</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card reveal reveal-delay-2">
+                <div class="stars">★★★★★</div>
+                <p class="testi-text">"The AI chatbot alone paid for the entire package. We're capturing leads 24/7 now
+                    without lifting a finger. The team are professional, fast, and genuinely care about results."</p>
+                <div class="testi-author">
+                    <div class="testi-avatar">SP</div>
+                    <div>
+                        <div class="testi-name">Sarah Patel</div>
+                        <div class="testi-role">Founder, Vitalis Clinic</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card reveal reveal-delay-3">
+                <div class="stars">★★★★★</div>
+                <p class="testi-text">"From first call to live site in under 3 weeks. No tech jargon, no stress — just a
+                    brilliant website and a team that delivers what they promise. Highly recommend."</p>
+                <div class="testi-author">
+                    <div class="testi-avatar">RL</div>
+                    <div>
+                        <div class="testi-name">Rachel Lawson</div>
+                        <div class="testi-role">Director, LuxeKitchen Co.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── ABOUT ── -->
+    <section id="about">
+        <div class="about-inner">
+            <div class="about-img-wrap reveal">
+                <div class="about-photo">
+                    <div class="about-photo-inner">
+                        <img src="Pic/photo.jpg" alt="Professional Photo" class="about-photo-img">
+                    </div>
+                </div>
+                <div class="about-badge">
+                    <div class="badge-num">100%</div>
+                    <div class="badge-text">Custom Designed</div>
+                </div>
+            </div>
+            <div class="about-text reveal reveal-delay-2">
+                <span class="section-eyebrow">About NEOMOON</span>
+                <h2 class="section-title">We Build Websites<br>That <em>Actually Work.</em></h2>
+                <div class="blue-divider"></div>
+                <p class="about-body">NEOMOON was founded with one mission: to give ambitious businesses the digital
+                    presence they deserve — without the confusion, the overblown costs, or the jargon.</p>
+                <p class="about-body">We combine precision design, smart AI automation, and proven SEO strategy to build
+                    online systems that attract the right customers and convert them. Every project is treated as if it
+                    were our own business.</p>
+                <p class="about-body">Based in the UK, working globally. No fluff — just results you can measure.</p>
+                <div class="about-cta">
+                    <a href="#footer" class="btn-primary">Start Your Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CTA BANNER ── -->
+    <div class="cta-banner">
+        <h2 class="section-title reveal">Ready to <em>Scale?</em></h2>
+        <p class="reveal">Book a free 30-minute strategy call and find out exactly how we can grow your business online.
+        </p>
+        <div class="cta-banner-actions reveal">
+            <a href="#" id="open-ai-nav" class="btn-primary">Talk to Neoma</a>
+            <a href="#pricing" class="btn-outline">View Pricing</a>
+        </div>
+    </div>
+
+    <!-- ── FOOTER ── -->
+    <section id="footer">
+        <footer>
+            <div class="footer-inner">
+                <div class="footer-brand reveal">
+                    <a href="#hero" class="nav-logo">NEO<span>MOON</span></a>
+                    <p class="footer-tagline">Premium web design &amp; AI automation for ambitious businesses.</p>
+                    <div class="footer-socials">
+                        <a href="mailto:mamoonkhan663@gmail.com" class="contact-link">
+                            <div class="contact-link-icon">✉️</div>hello@neomoon.agency
+                        </a>
+                        <a href="https://wa.me/+918082920363" target="_blank" class="wa-btn reveal">
+                            <span>💬</span> WhatsApp Us</a>
+                    </div>
+                </div>
+                <div class="reveal reveal-delay-1">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Web Design</a></li>
+                        <li><a href="#services">Google Business</a></li>
+                        <li><a href="#services">SEO &amp; Analytics</a></li>
+                        <li><a href="#services">AI Chatbot</a></li>
+                        <li><a href="#services">Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#process">Process</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="reveal reveal-delay-3">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span class="footer-copy">© 2026 NEOMOON Agency — All Rights Reserved</span>
+                <div class="footer-legal">
+                    <a href="#">Privacy</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
