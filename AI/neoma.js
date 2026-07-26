@@ -192,9 +192,19 @@ function initializeNeoma() {
 
         const handled = replyToUser(lastMessage);
 
-        if (!handled) {
-        askAI(lastMessage);
-        }
+        const typing = showTyping();
+
+        setTimeout(() => {
+
+            typing.remove();
+
+            const handled = replyToUser(text);
+
+            if (!handled) {
+                askAI(text);
+            }
+
+        }, 600);
 
     }
 
