@@ -1,4 +1,6 @@
 {
-    "name": "neomoon",
-    "private": true
+  "type": "module",
+  "dependencies": {
+    "openai": "^5"
+  }
 }
