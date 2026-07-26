@@ -16,7 +16,6 @@ export default async function handler(req, res) {
             error: "Method not allowed"
         });
     }
-    console.log("Brian_API_KEY exists:", !!process.env.Brian_API_KEY);
 
     try {
     const { message } = req.body;
@@ -24,7 +23,7 @@ export default async function handler(req, res) {
     console.log("Message:", message);
 
     const completion = await client.chat.completions.create({
-        model: "nvidia/nemotron-3-ultra-550b-a55b:free",
+        model: "openai/gpt-oss-20b:free",
         messages: [
             {
                 role: "system",
@@ -44,7 +43,6 @@ export default async function handler(req, res) {
     });
 
 } catch (err) {
-    console.log("Brian_API_KEY exists:", !!process.env.Brian_API_KEY);
     console.error("ERROR:");
     console.error(err);
 
