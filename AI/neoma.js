@@ -248,6 +248,13 @@ function initializeNeoma() {
 
             });
 
+            if (!response.ok) {
+                const error = await response.text();
+                console.error(error);
+                addBotMessage("Sorry, something went wrong. Please try again.");
+                return;
+            }
+
             const data = await response.json();
 
             addBotMessage(data.reply);
