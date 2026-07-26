@@ -259,7 +259,7 @@ function initializeNeoma() {
 
             addBotMessage(data.reply);
 
-        }, 1500);
+        }, 100);
 
     }
 
