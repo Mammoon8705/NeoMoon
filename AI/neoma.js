@@ -190,7 +190,11 @@ function initializeNeoma() {
 
         }
 
-        showTyping();
+        const handled = replyToUser(lastMessage);
+
+        if (!handled) {
+        askAI(lastMessage);
+        }
 
     }
 
@@ -210,6 +214,10 @@ function initializeNeoma() {
 
     async function showTyping() {
 
+        const oldTyping = document.getElementById("typing");
+
+        if (oldTyping) oldTyping.remove();
+
         const typing = document.createElement("div");
 
         typing.className = "typing";
@@ -228,38 +236,7 @@ function initializeNeoma() {
 
         scrollBottom();
 
-        setTimeout(async () => {
-
-            typing.remove();
-
-            const response = await fetch("/api/chat", {
-
-                method: "POST",
-
-                headers: {
-                    "Content-Type": "application/json"
-                },
-
-                body: JSON.stringify({
-
-                    message: lastMessage
-
-                })
-
-            });
-
-            if (!response.ok) {
-                const error = await response.text();
-                console.error(error);
-                addBotMessage("Sorry, something went wrong. Please try again.");
-                return;
-            }
-
-            const data = await response.json();
-
-            addBotMessage(data.reply);
-
-        }, 100);
+        return typing;
 
     }
 
@@ -311,6 +288,51 @@ function initializeNeoma() {
 
     }
 
+    async function askAI(message) {
+
+        const typing = showTyping();
+
+        try {
+
+            const response = await fetch("/api/chat", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    message
+                })
+            });
+
+            typing.remove();
+
+            if (!response.ok) {
+                const error = await response.text();
+                console.error(error);
+
+                addBotMessage(
+                    "Sorry, I couldn't reach the AI at the moment."
+                );
+                return;
+            }
+
+            const data = await response.json();
+
+            addBotMessage(data.reply);
+
+        } catch (err) {
+
+            typing.remove();
+
+            console.error(err);
+
+            addBotMessage(
+                "Sorry, something went wrong while contacting the AI."
+            );
+
+        }
+
+    }   
     function replyToUser(message) {
 
         const text = message.toLowerCase();
@@ -342,7 +364,7 @@ function initializeNeoma() {
 
             );
 
-            return;
+            return 1;
         }
 
         // Portfolio
@@ -367,7 +389,7 @@ function initializeNeoma() {
 
             );
 
-            return;
+            return 1;
         }
 
         // AI
@@ -397,7 +419,7 @@ function initializeNeoma() {
 
             );
 
-            return;
+            return 1;
         }
 
         // Meeting
@@ -422,7 +444,7 @@ function initializeNeoma() {
 
             );
 
-            return;
+            return 1;
         }
 
         // SEO
@@ -432,7 +454,7 @@ function initializeNeoma() {
                 "Yes. We provide technical SEO, on-page optimisation, Google Business setup and performance improvements."
             );
 
-            return;
+            return 1;
         }
 
         // Greeting
@@ -444,13 +466,10 @@ function initializeNeoma() {
                 "Hello! I'm Neoma. I can help you with websites, AI automation, pricing, SEO or booking a consultation."
             );
 
-            return;
+            return 1;
         }
 
-        // Default
-        addBotMessage(
-            "That's a great question. In the next version I'll answer using AI. For now, you can ask me about pricing, SEO, websites, AI automation or booking a consultation."
-        );
+        return 0
 
     }
 
