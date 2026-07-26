@@ -2,7 +2,7 @@ import OpenAI from "openai";
 
 const client = new OpenAI({
     baseURL: "https://openrouter.ai/api/v1",
-    apiKey: process.env.Brian_API_KEY,
+    apiKey: process.env.Test,
     defaultHeaders: {
     "HTTP-Referer": "https://neo-moon-git-main-mamoonkhan663-4872s-projects.vercel.app",
     "X-Title": "Neomoon"
