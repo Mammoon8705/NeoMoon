@@ -52,4 +52,4 @@ export default async function handler(req, res) {
         reply: err.message,
         stack: err.stack
     });
-}
+}}
