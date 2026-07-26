@@ -1,6 +1,6 @@
 {
   "type": "module",
   "dependencies": {
-    "openai": "^5.x.x"
+    "openai": "^5.23.2"
   }
 }
