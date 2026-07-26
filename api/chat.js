@@ -18,6 +18,8 @@ export default async function handler(req, res) {
     }
 
     try {
+        
+        console.log("API Key exists:", !!process.env.Brian_API_KEY);
 
         const { message } = req.body;
 
