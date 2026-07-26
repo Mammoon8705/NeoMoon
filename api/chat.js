@@ -44,7 +44,7 @@ export default async function handler(req, res) {
     });
 
 } catch (err) {
-
+    console.log("Brian_API_KEY exists:", !!process.env.Brian_API_KEY);
     console.error("ERROR:");
     console.error(err);
 
