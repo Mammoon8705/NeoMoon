@@ -16,12 +16,12 @@ export default async function handler(req, res) {
             error: "Method not allowed"
         });
     }
+    console.log("Brian_API_KEY exists:", !!process.env.Brian_API_KEY);
 
     try {
     const { message } = req.body;
 
     console.log("Message:", message);
-    console.log("API Key exists:", !!process.env.Brian_API_KEY);
 
     const completion = await client.chat.completions.create({
         model: "nvidia/nemotron-3-ultra-550b-a55b:free",
