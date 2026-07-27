@@ -196,6 +196,8 @@ function initializeNeoma() {
 
             typing.remove();
 
+            const handled = replyToUser(lastMessage);
+
             const handled = replyToUser(text);
 
             if (!handled) {
@@ -203,10 +205,7 @@ function initializeNeoma() {
             }
 
         }, 1500);
-
-        const handled = replyToUser(lastMessage);
-
-
+        
     }
 
     function addUserMessage(message) {
