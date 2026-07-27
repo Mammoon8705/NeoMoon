@@ -193,13 +193,17 @@ function initializeNeoma() {
 
         setTimeout(() => {
 
-            typing.remove();
-
             const handled = replyToUser(text);
 
-            if (!handled) {
-                askAI(text, showTyping());
-            }
+            if (handled) {
+
+                typing.remove();
+
+            } else {
+
+                askAI(text, typing);
+
+        }
 
         }, 1000);
     }
@@ -218,7 +222,7 @@ function initializeNeoma() {
 
     }
 
-    async function showTyping() {
+    function showTyping() {
 
         const oldTyping = document.getElementById("typing");
 
