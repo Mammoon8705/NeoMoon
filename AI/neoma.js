@@ -183,7 +183,7 @@ function initializeNeoma() {
         userInput.value = "";
 
         if (leadStep > 0) {
-
+s
             handleLead(text);
 
             return;
@@ -195,8 +195,6 @@ function initializeNeoma() {
         setTimeout(() => {
 
             typing.remove();
-
-            const handled = replyToUser(lastMessage);
 
             const handled = replyToUser(text);
 
