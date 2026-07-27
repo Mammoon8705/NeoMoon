@@ -191,12 +191,12 @@ function initializeNeoma() {
         }
 
         const typing = showTyping();
-        
-        const handled = replyToUser(lastMessage);
 
         setTimeout(() => {
 
             typing.remove();
+
+            const handled = replyToUser(lastMessage);
 
             const handled = replyToUser(text);
 
