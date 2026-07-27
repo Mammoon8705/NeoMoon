@@ -202,7 +202,10 @@ function initializeNeoma() {
                 askAI(text);
             }
 
-        }, 600);
+        }, 1500);
+
+        const handled = replyToUser(lastMessage);
+
 
     }
 
