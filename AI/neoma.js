@@ -190,8 +190,6 @@ function initializeNeoma() {
 
         }
 
-        const handled = replyToUser(lastMessage);
-
         const typing = showTyping();
 
         setTimeout(() => {
