@@ -183,7 +183,6 @@ function initializeNeoma() {
         userInput.value = "";
 
         if (leadStep > 0) {
-s
             handleLead(text);
 
             return;
@@ -199,11 +198,10 @@ s
             const handled = replyToUser(text);
 
             if (!handled) {
-                askAI(text);
+                askAI(text, showTyping());
             }
 
-        }, 1500);
-        
+        }, 1000);
     }
 
     function addUserMessage(message) {
@@ -296,9 +294,7 @@ s
 
     }
 
-    async function askAI(message) {
-
-        const typing = showTyping();
+    async function askAI(message, typing) {
 
         try {
 
@@ -312,19 +308,23 @@ s
                 })
             });
 
-            typing.remove();
-
             if (!response.ok) {
+
+                typing.remove();
+
                 const error = await response.text();
                 console.error(error);
 
                 addBotMessage(
                     "Sorry, I couldn't reach the AI at the moment."
                 );
+
                 return;
             }
 
             const data = await response.json();
+
+            typing.remove();
 
             addBotMessage(data.reply);
 
@@ -337,10 +337,10 @@ s
             addBotMessage(
                 "Sorry, something went wrong while contacting the AI."
             );
-
         }
 
-    }   
+    }
+
     function replyToUser(message) {
 
         const text = message.toLowerCase();
