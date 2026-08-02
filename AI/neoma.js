@@ -83,10 +83,20 @@ document.body.insertAdjacentHTML("beforeend", html);
 
 initializeNeoma();
 
+const neoma = document.getElementById("neoma");
+const neomaButton = document.getElementById("neoma-btn");
+const neomaPanel = document.getElementById("neoma-panel");
+const closeNeoma = document.getElementById("close-neoma");
+
 // Global helper – opens the Neoma panel from anywhere on the page
 window.openNeoma = function () {
     const panel = document.getElementById("neoma-panel");
-    if (panel) panel.classList.add("open");
+    const neoma = document.getElementById("neoma");
+
+    if (panel) {
+        panel.classList.add("open");
+        neoma.classList.add("hidden");
+    }
 };
 
 // Wire every "Talk to Neoma" / "Discuss This Plan" trigger
@@ -148,12 +158,14 @@ function initializeNeoma() {
 
     // Open Chat
     neomaButton.addEventListener("click", () => {
+        neoma.classList.add("hidden");
         neomaPanel.classList.add("open");
     });
 
     // Close Chat
     closeNeoma.addEventListener("click", () => {
         neomaPanel.classList.remove("open");
+        neoma.classList.remove("hidden");
     });
 
     // Send with Button
