@@ -1596,20 +1596,40 @@ body.menu-open {
 .timeline-dot {
     width: 70px;
     height: 70px;
-
-    font-size: .9rem;
-
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;      /* Same emoji size as before */
+    line-height: 1;
     margin-bottom: 20px;
-
     border: 1px solid rgba(0, 200, 255, .3);
-
     box-shadow:
         0 0 15px rgba(0, 200, 255, .15);
-
     background:
         linear-gradient(135deg,
             rgba(0, 200, 255, .12),
             rgba(74, 144, 226, .05));
+}
+
+.step-number{
+    position: absolute;
+    top: -6px;
+    right: -6px;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+    background: #00C8FF;
+    color: #06131b;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .timeline-content {
