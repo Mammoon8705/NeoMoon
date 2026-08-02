@@ -1615,7 +1615,7 @@ body.menu-open {
 .step-number{
     position: absolute;
     top: -6px;
-    right: -6px;
+    right: -76px;
 
     width: 20px;
     height: 20px;
