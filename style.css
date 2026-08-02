@@ -1044,8 +1044,9 @@ body.menu-open {
 
 .pricing-header {
     max-width: 1200px;
-    margin: 0 auto 60px;
-    padding: 0 5%
+    margin: 0 auto 70px;
+    padding: 0 5%;
+    text-align: center
 }
 
 .pricing-header .section-title {
@@ -1057,7 +1058,10 @@ body.menu-open {
 }
 
 .pricing-header .blue-divider {
-    background: linear-gradient(to right, var(--cyan), transparent)
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(to right, transparent, var(--cyan), transparent)
+
 }
 
 .pricing-grid {
