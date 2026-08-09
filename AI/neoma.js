@@ -583,7 +583,48 @@ function initializeNeoma() {
 
         );
 
-        console.log(lead);
+        try {
+            const response = await fetch(
+                "https://mamoon.app.n8n.cloud/webhook-test/neoma/lead",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        name: lead.name,
+                        email: lead.email,
+                        phone: lead.phone,
+                        business: lead.business,
+                        source: "Neoma",
+                        page: window.location.href,
+                        timestamp: new Date().toISOString()
+                    })
+                }
+            );
+
+            if (!response.ok) {
+                console.error(
+                    "Lead submission failed:",
+                    await response.text()
+                );
+                return;
+            }
+
+            const data = await response.json();
+
+            console.log("Lead successfully sent:", data);
+
+        } catch (error) {
+
+            console.error(
+                "Error sending lead to n8n:",
+                error
+            );
+
+        }
 
     }
 
