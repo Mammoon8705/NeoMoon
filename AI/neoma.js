@@ -559,7 +559,7 @@ function initializeNeoma() {
 
     }
 
-    function finishLead() {
+    async function finishLead() {
 
         addCard(
 
