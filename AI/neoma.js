@@ -314,7 +314,7 @@ function initializeNeoma() {
 
         try {
 
-            const response = await fetch("/api/chat", {
+            const response = await fetch("https://mamoon.app.n8n.cloud/webhook-test/neoma/message", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
