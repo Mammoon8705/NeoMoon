@@ -539,7 +539,7 @@ function initializeNeoma() {
 
                 addBotMessage(
 
-                    "Great.\n\nTell me a little about your business."
+                    "Great.\n\nTell me a little about your business and your budget."
 
                 );
 
