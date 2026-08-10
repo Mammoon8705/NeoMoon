@@ -547,6 +547,20 @@ function initializeNeoma() {
 
             case 4:
 
+                lead.budget = answer;
+
+                leadStep = 5;
+
+                addBotMessage(
+
+                    "Great.\n\nTell me your budget."
+
+                );
+
+                break;
+
+            case 5:
+
                 lead.business = answer;
 
                 leadStep = 0;
@@ -598,6 +612,7 @@ function initializeNeoma() {
                         email: lead.email,
                         phone: lead.phone,
                         business: lead.business,
+                        budget: lead.budget,
                         source: "Neoma",
                         page: window.location.href,
                         timestamp: new Date().toISOString()
