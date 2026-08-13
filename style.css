@@ -306,7 +306,7 @@ button {
 .section-subtitle {
     font-size: 1.05rem;
     color: var(--text-muted);
-    max-width: 560px;
+    max-width: 1200px;
     line-height: 1.8
 }
 
