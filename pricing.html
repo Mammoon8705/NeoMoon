@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pricing — Prestige Motors</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =========================
+           PRICING PAGE
+        ========================= */
+
+        .pricing-page {
+            min-height: 100vh;
+            padding: 120px 6% 80px;
+        }
+
+        .pricing-hero {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 70px;
+        }
+
+        .pricing-hero .section-eyebrow {
+            color: var(--cyan);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .pricing-hero h1 {
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            margin: 15px 0;
+            line-height: 1;
+        }
+
+        .pricing-hero h1 em {
+            color: var(--cyan);
+            font-family: "Playfair Display", serif;
+        }
+
+        .pricing-hero p {
+            max-width: 750px;
+            margin: 25px auto 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            opacity: 0.75;
+        }
+
+        .blue-divider {
+            width: 60px;
+            height: 4px;
+            background: var(--cyan);
+            margin: 25px auto;
+        }
+
+        /* =========================
+           PRICING GRID
+        ========================= */
+
+        .pricing-grid {
+            max-width: 1250px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .price-card {
+            position: relative;
+
+            background: #fff;
+            border-radius: 12px;
+
+            padding: 40px 32px;
+
+            text-align: center;
+
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .price-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.14);
+        }
+
+        .price-card.popular {
+            border: 2px solid var(--cyan);
+            transform: translateY(-12px);
+        }
+
+        .price-card.popular:hover {
+            transform: translateY(-18px);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            background: var(--cyan);
+            color: #fff;
+
+            padding: 7px 18px;
+            border-radius: 30px;
+
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .price-plan {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .price-name {
+            font-size: 1.1rem;
+            margin-top: 8px;
+            opacity: 0.65;
+        }
+
+        .price-desc {
+            min-height: 55px;
+
+            margin: 20px 0;
+
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.7;
+        }
+
+        .price-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 25px 0;
+        }
+
+        .price-amount span {
+            font-size: 0.9rem;
+            font-weight: 400;
+            opacity: 0.6;
+        }
+
+        .price-features {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+
+            text-align: left;
+        }
+
+        .price-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+            font-size: 0.9rem;
+        }
+
+        .price-features li::before {
+            content: "✓";
+            color: var(--cyan);
+            font-weight: 700;
+            margin-right: 10px;
+        }
+
+        .price-btn {
+            width: 100%;
+
+            padding: 14px 20px;
+
+            border: none;
+            border-radius: 6px;
+
+            font-size: 0.95rem;
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+        }
+
+        .price-btn.primary {
+            background: var(--cyan);
+            color: #fff;
+        }
+
+        .price-btn.primary:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        /* =========================
+           OFFER
+        ========================= */
+
+        .pricing-offer {
+            max-width: 1100px;
+            margin: 80px auto 0;
+
+            padding: 30px;
+
+            text-align: center;
+
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        .pricing-offer strong {
+            color: var(--cyan);
+        }
+
+        /* =========================
+           BOTTOM CTA
+        ========================= */
+
+        .pricing-cta {
+            text-align: center;
+            max-width: 700px;
+            margin: 100px auto 0;
+        }
+
+        .pricing-cta h2 {
+            font-size: 2.5rem;
+        }
+
+        .pricing-cta p {
+            margin: 20px 0 30px;
+            opacity: 0.7;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-bottom: 50px;
+
+            color: inherit;
+            text-decoration: none;
+            opacity: 0.7;
+        }
+
+        .back-home:hover {
+            opacity: 1;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 550px;
+            }
+
+            .price-card.popular {
+                transform: none;
+            }
+
+            .price-card.popular:hover {
+                transform: translateY(-8px);
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .pricing-page {
+                padding: 100px 20px 60px;
+            }
+
+            .pricing-hero h1 {
+                font-size: 3rem;
+            }
+
+            .price-card {
+                padding: 30px 24px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="pricing-page">
+
+        <a href="index.html" class="back-home">
+            ← Back to Home
+        </a>
+
+        <!-- HERO -->
+
+        <section class="pricing-hero">
+
+            <span class="section-eyebrow">
+                Transparent Pricing
+            </span>
+
+            <h1>
+                No Hidden Fees.<br>
+                <em>Just Results.</em>
+            </h1>
+
+            <div class="blue-divider"></div>
+
+            <p>
+                Choose the level of support your business needs.
+                From getting online to building a complete digital
+                growth system, every plan is designed to generate
+                measurable results.
+            </p>
+
+        </section>
+
+
+        <!-- PRICING -->
+
+        <section class="pricing-grid">
+
+            <!-- LAUNCH -->
+
+            <div class="price-card">
+
+                <div class="price-plan">
+                    🚀 Launch
+                </div>
+
+                <div class="price-name">
+                    Launch Plan
+                </div>
+
+                <p class="price-desc">
+                    Everything you need to get online
+                    and visible fast.
+                </p>
+
+                <div class="price-amount">
+                    £749
+                    <span>+ £249/mo</span>
+                </div>
+
+                <ul class="price-features">
+                    <li>Custom responsive website</li>
+                    <li>Google Business setup</li>
+                    <li>Mobile-first design</li>
+                    <li>Contact form</li>
+                    <li>Basic SEO</li>
+                    <li>Website updates</li>
+                </ul>
+
+                <button
+                    class="price-btn primary ai-plan"
+                    data-plan="Launch">
+
+                    Discuss This Plan
+
+                </button>
+
+            </div>
+
+
+            <!-- GROW -->
+
+            <div class="price-card popular">
+
+                <div class="popular-badge">
+                    Most Popular
+                </div>
+
+                <div class="price-plan">
+                    📊 Grow
+                </div>
+
+                <div class="price-name">
+                    Grow Plan
+                </div>
+
+                <p class="price-desc">
+                    The full growth stack — website,
+                    SEO, analytics and AI.
+                </p>
+
+                <div class="price-amount">
+                    £1199
+                    <span>+ £299/mo</span>
+                </div>
+
+                <ul class="price-features">
+                    <li>Everything in Launch</li>
+                    <li>Full SEO strategy</li>
+                    <li>AI SEO</li>
+                    <li>Google Analytics setup</li>
+                    <li>AI chatbot integration</li>
+                </ul>
+
+                <button
+                    class="price-btn primary ai-plan"
+                    data-plan="Grow">
+
+                    Discuss This Plan
+
+                </button>
+
+            </div>
+
+
+            <!-- SCALE -->
+
+            <div class="price-card">
+
+                <div class="price-plan">
+                    🔥 Scale
+                </div>
+
+                <div class="price-name">
+                    Scale Plan
+                </div>
+
+                <p class="price-desc">
+                    Full-service agency partner
+                    for ambitious brands.
+                </p>
+
+                <div class="price-amount">
+                    £1499
+                    <span>+ £399/mo</span>
+                </div>
+
+                <ul class="price-features">
+                    <li>Everything in Grow</li>
+                    <li>Monthly marketing campaigns</li>
+                    <li>AI automations</li>
+                    <li>Monthly performance reports</li>
+                    <li>Dedicated Account Manager</li>
+                </ul>
+
+                <button
+                    class="price-btn primary ai-plan"
+                    data-plan="Scale">
+
+                    Discuss This Plan
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- OFFER -->
+
+        <section class="pricing-offer">
+
+            <p>
+                <strong>LIMITED OFFER</strong>
+                • Get <strong>10%</strong>, <strong>20%</strong>
+                or <strong>30%</strong> off when you refer
+                1, 2 or 3 clients respectively.
+            </p>
+
+        </section>
+
+
+        <!-- CTA -->
+
+        <section class="pricing-cta">
+
+            <h2>
+                Not sure which plan is right for you?
+            </h2>
+
+            <p>
+                Let Neoma analyze your requirements
+                and help you choose the right package.
+            </p>
+
+            <button
+                class="price-btn primary"
+                onclick="window.openNeoma()">
+
+                Talk to Neoma
+
+            </button>
+
+        </section>
+
+    </main>
+
+    <!-- Your existing Neoma script -->
+    <script src="neoma.js"></script>
+
+</body>
+
+</html>
