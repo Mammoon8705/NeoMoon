@@ -155,6 +155,25 @@ function initializeNeoma() {
     const sendBtn = document.getElementById("send-message");
     const userInput = document.getElementById("user-input");
     const chatArea = document.getElementById("chat-area");
+    const bookMeeting = document.getElementById("book-meeting");
+
+    if (bookMeeting) {
+        bookMeeting.addEventListener("click", () => {
+
+            // Open Neoma
+            neoma.classList.add("hidden");
+            neomaPanel.classList.add("open");
+
+            // Start directly at booking
+            leadStep = 1;
+
+            addBotMessage(
+                "Excellent choice. 😊\n\nWhat's your name?"
+            );
+
+            userInput.focus();
+        });
+    }
 
     // Open Chat
     neomaButton.addEventListener("click", () => {
@@ -539,7 +558,7 @@ function initializeNeoma() {
 
                 addBotMessage(
 
-                    "Great.\n\nTell me a little about your business and your budget."
+                    "Great.\n\nTell me a little about your business."
 
                 );
 
@@ -547,7 +566,7 @@ function initializeNeoma() {
 
             case 4:
 
-                lead.budget = answer;
+                lead.business = answer;
 
                 leadStep = 5;
 
@@ -561,7 +580,7 @@ function initializeNeoma() {
 
             case 5:
 
-                lead.business = answer;
+                lead.budget = answer;
 
                 leadStep = 0;
 
