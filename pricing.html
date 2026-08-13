@@ -14,6 +14,651 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
+        /* ── RESET ── */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        /* ── VARIABLES ── */
+        :root {
+            --cream: #F5F0E8;
+            --steel: #1E1E2E;
+            --steel-light: #252538;
+            --obsidian: #0D0D12;
+            --moon-white: #F8F9FF;
+            --moon-blue: #4A90E2;
+            --moon-blue-dim: rgba(74, 144, 226, .15);
+            --moon-blue-glow: rgba(74, 144, 226, .35);
+            --cyan: #00C8FF;
+            --cyan-dim: rgba(0, 200, 255, .12);
+            --cyan-glow: rgba(0, 200, 255, .3);
+            --text-dark: #1A1A2E;
+            --text-muted: #6B7280;
+            --border: rgba(74, 144, 226, .15);
+            --border-light: rgba(248, 249, 255, .08);
+            --nav-pad: 0 5%;
+        }
+
+        /* ── BASE ── */
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            background: var(--cream);
+            color: var(--text-dark);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            overflow-x: hidden
+        }
+
+        ::-webkit-scrollbar {
+            width: 3px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--cream)
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--moon-blue);
+            border-radius: 2px
+        }
+
+        img {
+            max-width: 100%;
+            display: block
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer
+        }
+
+        button {
+            cursor: pointer
+        }
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%
+        }
+
+        /* ── ANIMATIONS ── */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-10px)
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 var(--cyan-glow)
+            }
+
+            50% {
+                box-shadow: 0 0 0 16px rgba(0, 200, 255, 0)
+            }
+        }
+
+        @keyframes rotateSlow {
+            from {
+                transform: rotate(0deg)
+            }
+
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        @keyframes moonGlow {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 20px rgba(74, 144, 226, .5)) drop-shadow(0 0 60px rgba(74, 144, 226, .2))
+            }
+
+            50% {
+                filter: drop-shadow(0 0 40px rgba(74, 144, 226, .8)) drop-shadow(0 0 100px rgba(74, 144, 226, .35))
+            }
+        }
+
+        @keyframes starTwinkle {
+
+            0%,
+            100% {
+                opacity: .3
+            }
+
+            50% {
+                opacity: 1
+            }
+        }
+
+        @keyframes lineGlow {
+
+            0%,
+            100% {
+                opacity: .2
+            }
+
+            50% {
+                opacity: .7
+            }
+        }
+
+        @keyframes countUp {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fogMove {
+
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-400px);
+            }
+
+        }
+
+        @keyframes floatParticle {
+
+            from {
+                transform: translateY(0);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            to {
+                transform: translateY(-120vh);
+                opacity: 0;
+            }
+
+        }
+
+        @keyframes starDrift {
+
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-400px);
+            }
+
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: .5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+        }
+
+        .port-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity .65s ease, transform .65s ease
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        .reveal-delay-1 {
+            transition-delay: .1s
+        }
+
+        .reveal-delay-2 {
+            transition-delay: .2s
+        }
+
+        .reveal-delay-3 {
+            transition-delay: .3s
+        }
+
+        .reveal-delay-4 {
+            transition-delay: .4s
+        }
+
+        /* ── SECTION LABELS ── */
+        .section-eyebrow {
+            font-family: 'DM Sans', sans-serif;
+            font-size: .7rem;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: var(--moon-blue);
+            margin-bottom: .8rem;
+            display: block
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.8rem, 3.5vw, 3rem);
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin-bottom: 1rem
+        }
+
+        .section-title em {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--moon-blue);
+            font-weight: 400
+        }
+
+        .section-title.light {
+            color: var(--moon-white)
+        }
+
+        .section-title.light em {
+            color: var(--cyan)
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 1200px;
+            line-height: 1.8
+        }
+
+        .blue-divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(to right, var(--cyan), transparent);
+            margin: 1.2rem 0 2.8rem;
+            border-radius: 2px
+        }
+
+        /* ──────────────────────────────────────
+        NAVBAR
+        ────────────────────────────────────── */
+        .mobile-menu {
+
+            position: fixed;
+
+            top: 0;
+            right: -100%;
+
+            width: 320px;
+            max-width: 90%;
+
+            height: 100vh;
+
+            background: var(--steel);
+
+            display: flex;
+
+            flex-direction: column;
+
+            padding: 30px;
+
+            transition: right .35s ease;
+
+            z-index: 1001;
+
+            border-left: 1px solid rgba(255, 255, 255, .08);
+
+            box-shadow: -20px 0 60px rgba(0, 0, 0, .4);
+
+        }
+
+        .mobile-menu.open {
+            right: 0;
+        }
+
+        .mobile-menu-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 50px;
+
+        }
+
+        .mobile-nav {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 24px;
+
+        }
+
+        .mobile-nav a {
+
+            font-family: 'Cinzel', serif;
+
+            font-size: 1rem;
+
+            color: var(--moon-white);
+
+            letter-spacing: .08em;
+
+            transition: .3s;
+
+        }
+
+        .mobile-nav a:hover {
+
+            color: var(--cyan);
+
+            padding-left: 10px;
+
+        }
+
+        .mobile-menu-cta {
+
+            margin-top: auto;
+
+            display: block;
+
+            text-align: center;
+
+            padding: 16px;
+
+            border-radius: 12px;
+
+            background: var(--cyan);
+
+            color: var(--obsidian);
+
+            font-family: 'Cinzel', serif;
+
+            font-weight: 700;
+
+            letter-spacing: .12em;
+
+            text-transform: uppercase;
+
+            box-shadow: 0 0 30px rgba(0, 200, 255, .3);
+
+        }
+
+        .overlay {
+
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(0, 0, 0, .45);
+
+            backdrop-filter: blur(8px);
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            transition: .3s;
+
+            z-index: 1000;
+
+        }
+
+        .overlay.show {
+
+            opacity: 1;
+
+            pointer-events: auto;
+
+        }
+
+        .mobile-close {
+
+            font-size: 1.8rem;
+
+            cursor: pointer;
+
+            color: var(--moon-white);
+
+            transition: .3s;
+
+        }
+
+        .mobile-close:hover {
+
+            color: var(--cyan);
+
+        }
+
+        /* Hide on desktop */
+        @media (min-width:992px) {
+
+            .mobile-menu,
+
+            .overlay,
+
+            .hamburger {
+
+                display: none !important;
+
+            }
+
+        }
+
+        /* Make sure menu closes when clicking overlay */
+        .overlay.show+.mobile-menu.open {
+            right: 0;
+        }
+
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        #mainNav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 5%;
+
+            transform: translateY(-100%);
+            opacity: 0;
+
+            transition:
+                transform 0.4s ease,
+                opacity 0.4s ease;
+
+            z-index: 1000;
+        }
+
+        #mainNav.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        #mainNav.scrolled {
+            padding: 12px 5%;
+            background: rgba(30, 30, 46, .98)
+        }
+
+        .nav-logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            font-family: 'Cinzel', serif;
+
+            font-size: 1.15rem;
+
+            letter-spacing: .18em;
+
+            color: white;
+
+            font-weight: 700;
+
+        }
+
+        .nav-logo img {
+
+            width: 42px;
+
+            height: 42px;
+
+            object-fit: contain;
+
+            filter:
+                drop-shadow(0 0 8px rgba(0, 200, 255, .35));
+
+        }
+
+        .nav-logo span {
+            color: var(--cyan)
+        }
+
+        .logo-text {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            letter-spacing: .18em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'DM Sans', sans-serif;
+            font-size: .78rem;
+            letter-spacing: .12em;
+            color: rgba(248, 249, 255, .65);
+            text-transform: uppercase;
+            transition: color .3s
+        }
+
+        .nav-links a:hover {
+            color: var(--moon-white)
+        }
+
+        .nav-cta {
+            font-family: 'Cinzel', serif;
+            font-size: .7rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            padding: 10px 22px;
+            background: var(--cyan);
+            color: var(--obsidian);
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all .3s;
+            box-shadow: 0 0 20px var(--cyan-glow);
+            margin-left: 0;
+        }
+
+        .nav-cta:hover {
+            background: var(--moon-white);
+            box-shadow: 0 0 30px var(--cyan-glow), 0 4px 20px rgba(0, 0, 0, .2)
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px
+        }
+
+        .hamburger span {
+            width: 22px;
+            height: 1.5px;
+            background: var(--moon-white);
+            border-radius: 2px;
+            transition: all .3s
+        }
+
+        @media(max-width:768px) {
+
+            .nav-logo img {
+
+                width: 34px;
+
+                height: 34px;
+
+            }
+
+            .nav-logo {
+
+                font-size: 1rem;
+
+            }
+
+        }
         /* ──────────────────────────────────────
         PRICING
         ────────────────────────────────────── */
@@ -251,6 +896,61 @@
 </head>
 
 <body>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu">
+
+        <div class="mobile-menu-header">
+
+            <a href="#hero" class="nav-logo">
+                <img src="Pic/logo.png" alt="X-MOON Logo">
+
+                <div class="logo-text">
+                    <span>X-</span>MOON
+                </div>
+            </a>
+
+            <div class="mobile-close">&times;</div>
+
+        </div>
+
+        <nav class="mobile-nav">
+
+            <a href="#hero">Home</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="#about">About</a>
+
+        </nav>
+
+        <a href="#" id="open-ai-mobile" class="mobile-menu-cta">
+            Talk To Neoma
+        </a>
+
+    </div>
+
+    <div class="overlay"></div>
+
+    <!-- ── NAVBAR ── -->
+    <nav id="mainNav">
+        <a href="#hero" class="nav-logo">
+            <img src="Pic/logo.png" alt="X-MOON Logo">
+
+            <div class="logo-text">
+                <span>X-</span>MOON
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+        <a href="#" id="open-ai-nav" class="nav-cta">Neoma</a>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </nav>
 
     <main class="pricing-page">
 
