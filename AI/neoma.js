@@ -129,6 +129,20 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // HERO BOOK MEETING BUTTON
+    const bookMeeting = document.getElementById("book-meeting");
+
+    if (bookMeeting) {
+        bookMeeting.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Open Neoma
+            window.openNeoma();
+
+            // Tell Neoma to start booking
+            window.startNeomaBooking();
+        });
+    }
 });
 
 // Neoma AI
@@ -155,25 +169,18 @@ function initializeNeoma() {
     const sendBtn = document.getElementById("send-message");
     const userInput = document.getElementById("user-input");
     const chatArea = document.getElementById("chat-area");
-    const bookMeeting = document.getElementById("book-meeting");
 
-    if (bookMeeting) {
-        bookMeeting.addEventListener("click", () => {
+    // Start booking from external buttons
+    window.startNeomaBooking = function () {
 
-            // Open Neoma
-            neoma.classList.add("hidden");
-            neomaPanel.classList.add("open");
+        leadStep = 1;
 
-            // Start directly at booking
-            leadStep = 1;
+        addBotMessage(
+            "Excellent choice. 😊\n\nWhat's your name?"
+        );
 
-            addBotMessage(
-                "Excellent choice. 😊\n\nWhat's your name?"
-            );
-
-            userInput.focus();
-        });
-    }
+        userInput.focus();
+    };
 
     // Open Chat
     neomaButton.addEventListener("click", () => {
