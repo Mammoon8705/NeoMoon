@@ -964,8 +964,11 @@ body.menu-open {
 }
 
 .svc-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 60px rgba(74, 144, 226, .15), 0 0 0 1px rgba(74, 144, 226, .25)
+    transform: translateY(-6px) scale(1.04);
+    box-shadow:
+        0 20px 60px rgba(74, 144, 226, .15),
+        0 0 0 1px rgba(74, 144, 226, .25);
+    z-index: 10;
 }
 
 .svc-icon {
