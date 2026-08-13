@@ -14,284 +14,236 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* =========================
-           PRICING PAGE
-        ========================= */
-
-        .pricing-page {
-            min-height: 100vh;
-            padding: 120px 6% 80px;
+        /* ──────────────────────────────────────
+        PRICING
+        ────────────────────────────────────── */
+        #pricing {
+            padding: 110px 0;
+            background: var(--steel)
         }
 
-        .pricing-hero {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto 70px;
+        .pricing-header {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            padding: 0 5%
         }
 
-        .pricing-hero .section-eyebrow {
-            color: var(--cyan);
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
+        .pricing-header .section-title {
+            color: var(--moon-white)
         }
 
-        .pricing-hero h1 {
-            font-size: clamp(3rem, 6vw, 5.5rem);
-            margin: 15px 0;
-            line-height: 1;
+        .pricing-header .section-title em {
+            color: var(--cyan)
         }
 
-        .pricing-hero h1 em {
-            color: var(--cyan);
-            font-family: "Playfair Display", serif;
+        .pricing-header .blue-divider {
+            background: linear-gradient(to right, var(--cyan), transparent)
         }
-
-        .pricing-hero p {
-            max-width: 750px;
-            margin: 25px auto 0;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            opacity: 0.75;
-        }
-
-        .blue-divider {
-            width: 60px;
-            height: 4px;
-            background: var(--cyan);
-            margin: 25px auto;
-        }
-
-        /* =========================
-           PRICING GRID
-        ========================= */
 
         .pricing-grid {
-            max-width: 1250px;
-            margin: auto;
-
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            align-items: stretch;
+            gap: 1.5rem;
+            align-items: start
         }
 
         .price-card {
+            background: var(--steel-light);
+            border-radius: 16px;
+            padding: 2.5rem;
+            border: 1px solid var(--border-light);
             position: relative;
-
-            background: #fff;
-            border-radius: 12px;
-
-            padding: 40px 32px;
-
-            text-align: center;
-
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
-
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
+            overflow: hidden;
+            transition: all .35s
         }
 
         .price-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.14);
+            transform: translateY(-4px)
         }
 
         .price-card.popular {
-            border: 2px solid var(--cyan);
-            transform: translateY(-12px);
-        }
-
-        .price-card.popular:hover {
-            transform: translateY(-18px);
+            border-color: var(--cyan);
+            box-shadow: 0 0 40px rgba(0, 200, 255, .12), 0 0 0 1px rgba(0, 200, 255, .35)
         }
 
         .popular-badge {
             position: absolute;
-            top: -14px;
-            left: 50%;
-            transform: translateX(-50%);
-
+            top: 1.2rem;
+            right: 1.2rem;
             background: var(--cyan);
-            color: #fff;
-
-            padding: 7px 18px;
-            border-radius: 30px;
-
-            font-size: 0.75rem;
-            font-weight: 700;
+            color: var(--obsidian);
+            font-family: 'Cinzel', serif;
+            font-size: .58rem;
+            letter-spacing: .2em;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 700
         }
 
         .price-plan {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-family: 'DM Sans', sans-serif;
+            font-size: .72rem;
+            letter-spacing: .25em;
+            text-transform: uppercase;
+            color: var(--moon-blue);
+            margin-bottom: .8rem
         }
 
         .price-name {
-            font-size: 1.1rem;
-            margin-top: 8px;
-            opacity: 0.65;
-        }
-
-        .price-desc {
-            min-height: 55px;
-
-            margin: 20px 0;
-
-            font-size: 0.95rem;
-            line-height: 1.6;
-            opacity: 0.7;
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--moon-white);
+            margin-bottom: .4rem
         }
 
         .price-amount {
-            font-size: 2.5rem;
+            font-family: 'Cinzel', serif;
+            font-size: 2.6rem;
             font-weight: 700;
-            margin: 25px 0;
+            color: var(--moon-white);
+            line-height: 1;
+            margin: 1.2rem 0
         }
 
         .price-amount span {
-            font-size: 0.9rem;
+            font-size: .9rem;
             font-weight: 400;
-            opacity: 0.6;
+            color: rgba(248, 249, 255, .4);
+            font-family: 'DM Sans', sans-serif
+        }
+
+        .price-desc {
+            font-size: .88rem;
+            color: rgba(248, 249, 255, .45);
+            margin-bottom: 1.8rem;
+            line-height: 1.7
         }
 
         .price-features {
             list-style: none;
-            padding: 0;
-            margin: 30px 0;
-
-            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: .75rem;
+            margin-bottom: 2rem
         }
 
         .price-features li {
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-
-            font-size: 0.9rem;
+            font-size: .88rem;
+            color: rgba(248, 249, 255, .7);
+            display: flex;
+            align-items: center;
+            gap: .7rem
         }
 
         .price-features li::before {
-            content: "✓";
+            content: '✓';
             color: var(--cyan);
+            font-size: .8rem;
             font-weight: 700;
-            margin-right: 10px;
+            flex-shrink: 0
         }
 
         .price-btn {
             width: 100%;
+            font-family: 'Cinzel', serif;
+            font-size: .7rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            padding: 13px;
+            border-radius: 8px;
+            border: 1px solid rgba(248, 249, 255, .2);
+            background: transparent;
+            color: var(--moon-white);
+            transition: all .3s;
+            font-weight: 600
+        }
 
-            padding: 14px 20px;
-
-            border: none;
-            border-radius: 6px;
-
-            font-size: 0.95rem;
-            font-weight: 600;
-
-            cursor: pointer;
-
-            transition: 0.3s ease;
+        .price-btn:hover {
+            border-color: var(--cyan);
+            color: var(--cyan);
+            background: var(--cyan-dim)
         }
 
         .price-btn.primary {
             background: var(--cyan);
-            color: #fff;
+            color: var(--obsidian);
+            border-color: var(--cyan);
+            box-shadow: 0 0 24px var(--cyan-glow)
         }
 
         .price-btn.primary:hover {
-            transform: translateY(-2px);
-            opacity: 0.9;
+            background: var(--moon-white);
+            box-shadow: 0 0 40px var(--cyan-glow)
         }
 
-        /* =========================
-           OFFER
-        ========================= */
+        /* ──────────────────────────────────────
+        BANNER
+        ────────────────────────────────────── */
 
-        .pricing-offer {
-            max-width: 1100px;
-            margin: 80px auto 0;
+        .offer-ticker {
 
-            padding: 30px;
+            background: #00C8FF;
 
-            text-align: center;
+            overflow: hidden;
 
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
+            white-space: nowrap;
+
+            padding: 18px 0;
+
+            position: relative;
+
         }
 
-        .pricing-offer strong {
-            color: var(--cyan);
+        .ticker-track {
+
+            display: flex;
+
+            width: max-content;
+
+            animation: tickerMove 44s linear infinite;
+
         }
 
-        /* =========================
-           BOTTOM CTA
-        ========================= */
+        .ticker-track span {
 
-        .pricing-cta {
-            text-align: center;
-            max-width: 700px;
-            margin: 100px auto 0;
+            font-family: 'Cinzel', serif;
+
+            font-size: .9rem;
+
+            letter-spacing: .15em;
+
+            text-transform: uppercase;
+
+            color: #0D0D12;
+
+            font-weight: 700;
+
+            margin-right: 70px;
+
         }
 
-        .pricing-cta h2 {
-            font-size: 2.5rem;
+        .ticker-track strong {
+            color: #ff2c2c;
+            font-size: 16px;
         }
 
-        .pricing-cta p {
-            margin: 20px 0 30px;
-            opacity: 0.7;
-        }
+        @keyframes tickerMove {
 
-        .back-home {
-            display: inline-block;
-            margin-bottom: 50px;
+            from {
 
-            color: inherit;
-            text-decoration: none;
-            opacity: 0.7;
-        }
+                transform: translateX(0);
 
-        .back-home:hover {
-            opacity: 1;
-        }
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 900px) {
-
-            .pricing-grid {
-                grid-template-columns: 1fr;
-                max-width: 550px;
             }
 
-            .price-card.popular {
-                transform: none;
-            }
+            to {
 
-            .price-card.popular:hover {
-                transform: translateY(-8px);
-            }
+                transform: translateX(-50%);
 
-        }
-
-        @media (max-width: 600px) {
-
-            .pricing-page {
-                padding: 100px 20px 60px;
-            }
-
-            .pricing-hero h1 {
-                font-size: 3rem;
-            }
-
-            .price-card {
-                padding: 30px 24px;
             }
 
         }
