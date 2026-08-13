@@ -338,4 +338,29 @@ if (document.querySelector(".portfolioSwiper")) {
         speed: 800
 
     });
+
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q = item.querySelector('.faq-q');
+    var a = item.querySelector('.faq-a');
+    var inner = item.querySelector('.faq-a-inner');
+    q.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(openItem){
+        if(openItem !== item){
+          openItem.classList.remove('open');
+          openItem.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+          openItem.querySelector('.faq-a').style.maxHeight = null;
+        }
+      });
+      if(isOpen){
+        item.classList.remove('open');
+        q.setAttribute('aria-expanded', 'false');
+        a.style.maxHeight = null;
+      } else {
+        item.classList.add('open');
+        q.setAttribute('aria-expanded', 'true');
+        a.style.maxHeight = inner.offsetHeight + 40 + 'px';
+      }
+    });
+  });
 };
