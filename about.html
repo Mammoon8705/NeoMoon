@@ -38,7 +38,7 @@ html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white
 <section class="cta"><div class="container reveal"><span class="eyebrow">05 / Let's Build</span><h2>Your next advantage <em>starts here.</em></h2><p>Tell Neoma what you're building, what is slowing you down, or where you want to go next.</p><button class="cta-btn" type="button" onclick="openNeomaSafe()">Talk to Neoma</button></div></section>
 <footer class="footer">© 2026 — All rights reserved.</footer>
 </div>
-<script src="neoma.js"></script>
+<script src="AI/neoma.js"></script>
 <script>
 function openNeomaSafe(){if(typeof window.openNeoma==='function'){window.openNeoma();return}const b=document.querySelector('#neoma-btn');if(b){b.click();return}console.warn('Neoma could not be opened. Check the neoma.js path.');}
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
