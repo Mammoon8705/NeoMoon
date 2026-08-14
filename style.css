@@ -971,6 +971,16 @@ body.menu-open {
     z-index: 10;
 }
 
+.svc-card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.svc-card-link .svc-card {
+    cursor: pointer;
+}
+
 .svc-icon {
     width: 52px;
     height: 52px;
