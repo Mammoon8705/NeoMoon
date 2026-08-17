@@ -144,12 +144,8 @@ for (let i = 0; i < 40; i++) {
 ========================================= */
 
 const serviceCards =
-    document.querySelectorAll('.service-item');
+    document.querySelectorAll('.services-grid .svc-card-link');
 
-
-/* =========================================
-   TOUCH START
-========================================= */
 
 serviceCards.forEach(card => {
 
@@ -165,10 +161,6 @@ serviceCards.forEach(card => {
 
 });
 
-
-/* =========================================
-   FIND ACTIVE CARD
-========================================= */
 
 function updateActiveServiceCard() {
 
@@ -187,10 +179,8 @@ function updateActiveServiceCard() {
         const rect =
             card.getBoundingClientRect();
 
-
         const center =
             rect.left + rect.width / 2;
-
 
         const distance =
             Math.abs(
@@ -216,31 +206,19 @@ function updateActiveServiceCard() {
 }
 
 
-/* =========================================
-   SERVICES TIMELINE
-========================================= */
-
-const servicesTimeline =
-    document.querySelector('.services-timeline');
+const servicesGrid =
+    document.querySelector('.services-grid');
 
 
-/* =========================================
-   SCROLL
-========================================= */
+if (servicesGrid) {
 
-if (servicesTimeline) {
-
-    servicesTimeline.addEventListener(
+    servicesGrid.addEventListener(
         'scroll',
         updateActiveServiceCard
     );
 
 }
 
-
-/* =========================================
-   INITIAL STATE
-========================================= */
 
 updateActiveServiceCard();
 

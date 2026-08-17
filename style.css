@@ -1062,17 +1062,15 @@ body.menu-open {
 
 @media (max-width: 768px) {
 
-    /* Hide desktop grid */
-    .services-grid {
-        display: none;
-    }
-
-
     /* =====================================
-       SERVICES MOBILE TRACK
+       SERVICES MOBILE SWIPE
     ===================================== */
 
-    .services-timeline {
+    #services {
+        overflow: hidden;
+    }
+
+    .services-grid {
 
         display: flex;
 
@@ -1085,81 +1083,43 @@ body.menu-open {
 
         padding: 20px 7% 40px;
 
-        /*
-         * Native mobile scrolling
-         */
         -webkit-overflow-scrolling: touch;
 
-        /*
-         * Snap each service into position
-         */
         scroll-snap-type: x mandatory;
 
         scroll-behavior: smooth;
 
-        /*
-         * Hide scrollbar
-         */
         scrollbar-width: none;
 
-        /*
-         * Horizontal finger movement
-         */
         touch-action: pan-x;
     }
 
-
-    .services-timeline::-webkit-scrollbar {
+    .services-grid::-webkit-scrollbar {
         display: none;
     }
 
 
     /* =====================================
-       SERVICE ITEM
+       SERVICE CARD
     ===================================== */
 
-    .service-item {
+    .services-grid .svc-card-link {
 
-        /*
-         * Same structural idea as timeline-item
-         */
-        display: flex;
-
-        gap: 1.5rem;
-
-        position: relative;
-
-        /*
-         * Each item occupies almost
-         * the entire mobile screen
-         */
         flex: 0 0 86%;
 
         min-width: 86%;
 
-        /*
-         * Snap to center
-         */
         scroll-snap-align: center;
 
         scroll-snap-stop: always;
+    }
 
-        /*
-         * Card appearance
-         */
-        padding: 1.5rem;
 
-        border: 1px solid rgba(0, 200, 255, .15);
+    .services-grid .svc-card {
 
-        background:
-            linear-gradient(
-                135deg,
-                rgba(0, 200, 255, .06),
-                rgba(74, 144, 226, .03)
-            );
+        height: 100%;
 
-        box-shadow:
-            0 0 15px rgba(0, 200, 255, .05);
+        margin: 0;
 
         opacity: .55;
 
@@ -1171,149 +1131,22 @@ body.menu-open {
 
 
     /* =====================================
-       ACTIVE SERVICE
+       ACTIVE CARD
     ===================================== */
 
-    .service-item.active {
+    .services-grid .svc-card-link.active .svc-card {
 
         opacity: 1;
-
-        border-color:
-            rgba(0, 200, 255, .4);
-
-        box-shadow:
-            0 0 25px rgba(0, 200, 255, .12);
     }
 
 
     /* =====================================
-       SERVICE ICON
+       PREVENT HOVER EFFECTS ON MOBILE
     ===================================== */
 
-    .service-icon {
+    .services-grid .svc-card:hover {
 
-        width: 70px;
-        height: 70px;
-
-        flex: 0 0 70px;
-
-        position: relative;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: center;
-
-        font-size: 30px;
-
-        line-height: 1;
-
-        border: 1px solid rgba(0, 200, 255, .3);
-
-        box-shadow:
-            0 0 15px rgba(0, 200, 255, .15);
-
-        background:
-            linear-gradient(
-                135deg,
-                rgba(0, 200, 255, .12),
-                rgba(74, 144, 226, .05)
-            );
-    }
-
-
-    /* =====================================
-       SERVICE NUMBER
-    ===================================== */
-
-    .service-number {
-
-        position: absolute;
-
-        top: -6px;
-
-        right: -6px;
-
-        width: 20px;
-        height: 20px;
-
-        border-radius: 50%;
-
-        background: #00C8FF;
-
-        color: #06131b;
-
-        font-size: 10px;
-
-        font-weight: 700;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: center;
-    }
-
-
-    /* =====================================
-       SERVICE CONTENT
-    ===================================== */
-
-    .service-content {
-
-        padding: .1rem 0 1rem;
-
-        min-width: 0;
-    }
-
-
-    .service-title {
-
-        font-family: 'Cinzel', serif;
-
-        font-size: .95rem;
-
-        font-weight: 600;
-
-        color: var(--moon-white);
-
-        margin-bottom: .5rem;
-
-        line-height: 1.4;
-    }
-
-
-    .service-desc {
-
-        font-size: .85rem;
-
-        color:
-            rgba(248, 249, 255, .5);
-
-        line-height: 1.7;
-
-        margin-bottom: .8rem;
-    }
-
-
-    .service-list {
-
-        margin: 0;
-
-        padding-left: 1rem;
-
-        font-size: .78rem;
-
-        color:
-            rgba(248, 249, 255, .5);
-
-        line-height: 1.7;
-    }
-
-
-    .service-list li {
-        margin-bottom: .25rem;
+        transform: none;
     }
 
 }
