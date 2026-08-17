@@ -1848,7 +1848,7 @@ body.menu-open {
     text-align: left;
 
     font-family: 'Cinzel', serif;
-    font-size: clamp(17px, 2vw, 21px);
+    font-size: clamp(16px, 2vw, 20px);
     font-weight: 600;
 
     color: var(--text-dark);
