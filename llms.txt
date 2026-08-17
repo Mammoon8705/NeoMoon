@@ -1,0 +1,50 @@
+# Orbiter Automations
+
+> Orbiter Automations is a digital agency that builds modern websites, AI assistants, and business automation systems designed to help businesses attract, convert, and manage customers.
+
+## Company
+
+Orbiter Automations helps businesses improve their digital presence through high-performance websites, AI-powered customer interaction, automation, SEO, analytics, and ongoing digital support.
+
+## Services
+
+- Website Design & Development
+  Modern, responsive websites designed around business goals, brand identity, user experience, and conversion.
+
+- AI Assistants
+  AI-powered website assistants that can answer customer questions, provide business information, capture leads, qualify prospects, and assist customers.
+
+- Business Automation
+  Automated workflows that connect websites, forms, AI systems, databases, email, calendars, notifications, and other business tools.
+
+- SEO & Analytics
+  Search engine optimization, website analytics, performance tracking, and reporting designed to improve online visibility and understand customer behavior.
+
+- Digital Growth & Maintenance
+  Ongoing website updates, digital improvements, marketing support, analytics, and reporting.
+
+## Solutions
+
+Orbiter Automations can build systems that:
+
+- Capture and qualify leads
+- Answer customer questions automatically
+- Book appointments
+- Connect customer data to business systems
+- Send automated emails and notifications
+- Connect websites with calendars and databases
+- Automate repetitive business processes
+- Provide analytics and reporting
+
+## Website
+
+- Homepage: https://www.orbiterautomations.com/
+- About: https://www.orbiterautomations.com/about.html
+- Services: https://www.orbiterautomations.com/auto.html
+- Pricing: https://www.orbiterautomations.com/pricing.html
+
+## Contact
+
+For services, projects, partnerships, or inquiries, visit:
+
+https://neomoon.in/
