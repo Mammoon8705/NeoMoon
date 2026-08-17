@@ -138,6 +138,84 @@ for (let i = 0; i < 40; i++) {
     particles.appendChild(p);
 }
 
+/* =========================================
+   MOBILE SERVICES SWIPE
+========================================= */
+
+const servicesTrack = document.querySelector('.services-swipe');
+
+if (servicesTrack) {
+
+    const serviceCards =
+        servicesTrack.querySelectorAll('.svc-card-link');
+
+    function updateActiveService() {
+
+        let closestCard = null;
+        let closestDistance = Infinity;
+
+        const screenCenter =
+            window.innerWidth / 2;
+
+        serviceCards.forEach(card => {
+
+            const rect =
+                card.getBoundingClientRect();
+
+            const cardCenter =
+                rect.left + rect.width / 2;
+
+            const distance =
+                Math.abs(cardCenter - screenCenter);
+
+            if (distance < closestDistance) {
+
+                closestDistance = distance;
+                closestCard = card;
+
+            }
+
+        });
+
+        serviceCards.forEach(card => {
+            card.classList.remove('active');
+        });
+
+        if (closestCard) {
+            closestCard.classList.add('active');
+        }
+    }
+
+
+    /* Detect scrolling */
+    servicesTrack.addEventListener(
+        'scroll',
+        updateActiveService,
+        { passive: true }
+    );
+
+
+    /* Detect direct touch */
+    serviceCards.forEach(card => {
+
+        card.addEventListener('touchstart', () => {
+
+            serviceCards.forEach(c => {
+                c.classList.remove('active');
+            });
+
+            card.classList.add('active');
+
+        }, { passive: true });
+
+    });
+
+
+    /* Initial state */
+    updateActiveService();
+
+}
+
 /* ── CIRCULAR PROCESS ── */
 (function () {
     const steps = [

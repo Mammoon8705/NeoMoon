@@ -1097,6 +1097,62 @@ body.menu-open {
 
 }
 
+/* =========================================
+   MOBILE SERVICES SWIPE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .services-swipe {
+        display: flex;
+        gap: 20px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        padding: 20px 8% 40px;
+
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: none;
+    }
+
+    .services-swipe::-webkit-scrollbar {
+        display: none;
+    }
+
+    .services-swipe .svc-card-link {
+        flex: 0 0 82%;
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+    }
+
+    .services-swipe .svc-card {
+        height: 100%;
+        margin: 0;
+        transition:
+            transform .35s ease,
+            opacity .35s ease,
+            box-shadow .35s ease;
+    }
+
+    /* Cards that aren't centered */
+    .services-swipe .svc-card-link:not(.active) {
+        opacity: .55;
+        transform: scale(.94);
+    }
+
+    /* Center card */
+    .services-swipe .svc-card-link.active {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
 
 /* ──────────────────────────────────────
    WHY CHOOSE US
