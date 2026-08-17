@@ -1047,6 +1047,55 @@ body.menu-open {
     opacity: 1
 }
 
+/* =========================================
+   SERVICES — MOBILE HORIZONTAL SLIDER
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .services-grid {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        /* One card at a time */
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+
+        /* Smooth touch scrolling */
+        -webkit-overflow-scrolling: touch;
+
+        /* Spacing */
+        gap: 18px;
+
+        /* Keep the cards from touching the screen edges */
+        padding: 0 5% 20px;
+
+        /* Prevent scrollbar from affecting layout */
+        scrollbar-width: none;
+    }
+
+    /* Chrome / Safari / Edge */
+    .services-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .svc-card-link {
+        flex: 0 0 88%;
+        width: 88%;
+
+        scroll-snap-align: center;
+
+        /* Prevent cards from shrinking */
+        min-width: 88%;
+    }
+
+    .svc-card {
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+}
 
 
 /* ──────────────────────────────────────
