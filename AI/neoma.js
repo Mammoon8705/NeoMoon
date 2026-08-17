@@ -17,7 +17,7 @@ const html = `
 
         <div class="pulse"></div>
 
-        <img src="Pic/logo.png" alt="Neoma">
+        <img src="Pic/logo.jpg" alt="Neoma">
 
     </button>
 
