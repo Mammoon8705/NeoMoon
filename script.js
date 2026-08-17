@@ -140,81 +140,119 @@ for (let i = 0; i < 40; i++) {
 
 /* =========================================
    MOBILE SERVICES SWIPE
+   Same logic as PROCESS
 ========================================= */
 
-const servicesTrack = document.querySelector('.services-swipe');
+const serviceCards =
+    document.querySelectorAll('.services-grid .svc-card-link');
 
-if (servicesTrack) {
 
-    const serviceCards =
-        servicesTrack.querySelectorAll('.svc-card-link');
+/* =========================================
+   TOUCH START
+========================================= */
 
-    function updateActiveService() {
+serviceCards.forEach(card => {
 
-        let closestCard = null;
-        let closestDistance = Infinity;
+    card.addEventListener('touchstart', () => {
 
-        const screenCenter =
-            window.innerWidth / 2;
-
-        serviceCards.forEach(card => {
-
-            const rect =
-                card.getBoundingClientRect();
-
-            const cardCenter =
-                rect.left + rect.width / 2;
-
-            const distance =
-                Math.abs(cardCenter - screenCenter);
-
-            if (distance < closestDistance) {
-
-                closestDistance = distance;
-                closestCard = card;
-
-            }
-
+        serviceCards.forEach(c => {
+            c.classList.remove('active');
         });
 
-        serviceCards.forEach(card => {
-            card.classList.remove('active');
-        });
+        card.classList.add('active');
 
-        if (closestCard) {
-            closestCard.classList.add('active');
-        }
-    }
+    }, { passive: true });
+
+});
 
 
-    /* Detect scrolling */
-    servicesTrack.addEventListener(
-        'scroll',
-        updateActiveService,
-        { passive: true }
-    );
+/* =========================================
+   FIND CARD CLOSEST TO SCREEN CENTER
+========================================= */
+
+function updateActiveServiceCard() {
+
+    if (!serviceCards.length) return;
 
 
-    /* Detect direct touch */
+    /* Remove active state */
+
+    serviceCards.forEach(card => {
+        card.classList.remove('active');
+    });
+
+
+    /* First card as fallback */
+
+    let closest = serviceCards[0];
+
+    let closestDistance = Infinity;
+
+
+    /* Check every card */
+
     serviceCards.forEach(card => {
 
-        card.addEventListener('touchstart', () => {
+        const rect =
+            card.getBoundingClientRect();
 
-            serviceCards.forEach(c => {
-                c.classList.remove('active');
-            });
 
-            card.classList.add('active');
+        const center =
+            rect.left + rect.width / 2;
 
-        }, { passive: true });
+
+        const distance =
+            Math.abs(
+                center - window.innerWidth / 2
+            );
+
+
+        if (distance < closestDistance) {
+
+            closestDistance = distance;
+
+            closest = card;
+
+        }
 
     });
 
 
-    /* Initial state */
-    updateActiveService();
+    /* Activate centered card */
+
+    closest.classList.add('active');
 
 }
+
+
+/* =========================================
+   SERVICES TRACK
+========================================= */
+
+const servicesTrack =
+    document.querySelector('.services-grid');
+
+
+/* =========================================
+   SCROLL LISTENER
+========================================= */
+
+if (servicesTrack) {
+
+    servicesTrack.addEventListener(
+        'scroll',
+        updateActiveServiceCard,
+        { passive: true }
+    );
+
+}
+
+
+/* =========================================
+   INITIAL STATE
+========================================= */
+
+updateActiveServiceCard();
 
 /* ── CIRCULAR PROCESS ── */
 (function () {

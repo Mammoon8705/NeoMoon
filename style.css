@@ -1048,107 +1048,174 @@ body.menu-open {
 }
 
 /* =========================================
-   SERVICES — MOBILE HORIZONTAL SLIDER
-   ========================================= */
-
-@media (max-width: 768px) {
-
-    .services-grid {
-        display: flex;
-        overflow-x: auto;
-        overflow-y: hidden;
-
-        /* One card at a time */
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-
-        /* Smooth touch scrolling */
-        -webkit-overflow-scrolling: touch;
-
-        /* Spacing */
-        gap: 18px;
-
-        /* Keep the cards from touching the screen edges */
-        padding: 0 5% 20px;
-
-        /* Prevent scrollbar from affecting layout */
-        scrollbar-width: none;
-    }
-
-    /* Chrome / Safari / Edge */
-    .services-grid::-webkit-scrollbar {
-        display: none;
-    }
-
-    .svc-card-link {
-        flex: 0 0 88%;
-        width: 88%;
-
-        scroll-snap-align: center;
-
-        /* Prevent cards from shrinking */
-        min-width: 88%;
-    }
-
-    .svc-card {
-        height: 100%;
-        box-sizing: border-box;
-    }
-
-}
-
-/* =========================================
-   MOBILE SERVICES SWIPE
+   MOBILE SERVICES — SWIPE CAROUSEL
 ========================================= */
 
 @media (max-width: 768px) {
 
-    .services-swipe {
+    /* Services section */
+    #services {
+        padding: 90px 0;
+        overflow: hidden;
+    }
+
+
+    /* Header */
+    .services-header {
+        padding: 0 7%;
+        margin-bottom: 35px;
+    }
+
+    .services-header .section-subtitle {
+        font-size: 0.85rem;
+        line-height: 1.7;
+    }
+
+
+    /* =====================================
+       SWIPE CONTAINER
+    ===================================== */
+
+    .services-grid {
         display: flex;
-        gap: 20px;
+
+        width: 100%;
+
+        gap: 18px;
 
         overflow-x: auto;
         overflow-y: hidden;
 
-        padding: 20px 8% 40px;
+        padding: 15px 9% 35px;
 
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-
+        /*
+         * Same native touch scrolling approach
+         * as the Process timeline.
+         */
         -webkit-overflow-scrolling: touch;
 
+        /*
+         * Snap each card toward the center.
+         */
+        scroll-snap-type: x mandatory;
+
+        scroll-behavior: smooth;
+
+        /*
+         * Hide scrollbar.
+         */
         scrollbar-width: none;
+
+        /*
+         * Prevent accidental vertical scrolling
+         * from interfering with horizontal swipe.
+         */
+        touch-action: pan-x;
     }
 
-    .services-swipe::-webkit-scrollbar {
+    .services-grid::-webkit-scrollbar {
         display: none;
     }
 
-    .services-swipe .svc-card-link {
+
+    /* =====================================
+       SERVICE CARD
+    ===================================== */
+
+    .services-grid .svc-card-link {
+
+        /*
+         * One card occupies most of the screen.
+         */
         flex: 0 0 82%;
+
+        width: 82%;
+
+        /*
+         * Center each card when scrolling.
+         */
         scroll-snap-align: center;
         scroll-snap-stop: always;
+
+        /*
+         * Remove desktop sizing restrictions.
+         */
+        max-width: none;
+
+        /*
+         * Make every card equal height.
+         */
+        height: auto;
+
+        /*
+         * Prevent flexbox from shrinking cards.
+         */
+        min-width: 0;
     }
 
-    .services-swipe .svc-card {
+
+    .services-grid .svc-card {
+
         height: 100%;
+
         margin: 0;
+
+        /*
+         * Keep the card visually stable
+         * while the finger is moving.
+         */
+        transform: none;
+
         transition:
-            transform .35s ease,
-            opacity .35s ease,
-            box-shadow .35s ease;
+            opacity .25s ease,
+            border-color .25s ease,
+            box-shadow .25s ease;
     }
 
-    /* Cards that aren't centered */
-    .services-swipe .svc-card-link:not(.active) {
+
+    /* =====================================
+       ACTIVE CARD
+    ===================================== */
+
+    .services-grid .svc-card-link {
         opacity: .55;
-        transform: scale(.94);
     }
 
-    /* Center card */
-    .services-swipe .svc-card-link.active {
+    .services-grid .svc-card-link.active {
         opacity: 1;
-        transform: scale(1);
+    }
+
+
+    /* =====================================
+       CARD CONTENT
+    ===================================== */
+
+    .services-grid .svc-title {
+        font-size: 1rem;
+        line-height: 1.35;
+    }
+
+    .services-grid .svc-desc {
+        font-size: .82rem;
+        line-height: 1.65;
+    }
+
+    .services-grid .svc-list {
+        font-size: .78rem;
+        line-height: 1.7;
+    }
+
+
+    /* =====================================
+       REMOVE HOVER BEHAVIOUR ON TOUCH
+    ===================================== */
+
+    .services-grid .svc-card:hover {
+        transform: none;
+    }
+
+    .services-grid .svc-card-link:hover {
+        transform: none;
     }
 
 }
