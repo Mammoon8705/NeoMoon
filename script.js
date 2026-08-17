@@ -140,11 +140,11 @@ for (let i = 0; i < 40; i++) {
 
 /* =========================================
    MOBILE SERVICES SWIPE
-   Same logic as PROCESS
+   SAME LOGIC AS PROCESS
 ========================================= */
 
 const serviceCards =
-    document.querySelectorAll('.services-grid .svc-card-link');
+    document.querySelectorAll('.service-item');
 
 
 /* =========================================
@@ -155,41 +155,32 @@ serviceCards.forEach(card => {
 
     card.addEventListener('touchstart', () => {
 
-        serviceCards.forEach(c => {
-            c.classList.remove('active');
-        });
+        serviceCards.forEach(c =>
+            c.classList.remove('active')
+        );
 
         card.classList.add('active');
 
-    }, { passive: true });
+    });
 
 });
 
 
 /* =========================================
-   FIND CARD CLOSEST TO SCREEN CENTER
+   FIND ACTIVE CARD
 ========================================= */
 
 function updateActiveServiceCard() {
-
-    if (!serviceCards.length) return;
-
-
-    /* Remove active state */
 
     serviceCards.forEach(card => {
         card.classList.remove('active');
     });
 
 
-    /* First card as fallback */
-
     let closest = serviceCards[0];
 
     let closestDistance = Infinity;
 
-
-    /* Check every card */
 
     serviceCards.forEach(card => {
 
@@ -218,31 +209,30 @@ function updateActiveServiceCard() {
     });
 
 
-    /* Activate centered card */
-
-    closest.classList.add('active');
+    if (closest) {
+        closest.classList.add('active');
+    }
 
 }
 
 
 /* =========================================
-   SERVICES TRACK
+   SERVICES TIMELINE
 ========================================= */
 
-const servicesTrack =
-    document.querySelector('.services-grid');
+const servicesTimeline =
+    document.querySelector('.services-timeline');
 
 
 /* =========================================
-   SCROLL LISTENER
+   SCROLL
 ========================================= */
 
-if (servicesTrack) {
+if (servicesTimeline) {
 
-    servicesTrack.addEventListener(
+    servicesTimeline.addEventListener(
         'scroll',
-        updateActiveServiceCard,
-        { passive: true }
+        updateActiveServiceCard
     );
 
 }
@@ -253,6 +243,7 @@ if (servicesTrack) {
 ========================================= */
 
 updateActiveServiceCard();
+
 
 /* ── CIRCULAR PROCESS ── */
 (function () {

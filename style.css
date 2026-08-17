@@ -1048,123 +1048,120 @@ body.menu-open {
 }
 
 /* =========================================
-   MOBILE SERVICES — SWIPE CAROUSEL
+   MOBILE SERVICES SWIPE
+========================================= */
+
+.services-timeline {
+    display: none;
+}
+
+
+/* =========================================
+   MOBILE
 ========================================= */
 
 @media (max-width: 768px) {
 
-    /* Services section */
-    #services {
-        padding: 90px 0;
-        overflow: hidden;
-    }
-
-
-    /* Header */
-    .services-header {
-        padding: 0 7%;
-        margin-bottom: 35px;
-    }
-
-    .services-header .section-subtitle {
-        font-size: 0.85rem;
-        line-height: 1.7;
+    /* Hide desktop grid */
+    .services-grid {
+        display: none;
     }
 
 
     /* =====================================
-       SWIPE CONTAINER
+       SERVICES MOBILE TRACK
     ===================================== */
 
-    .services-grid {
+    .services-timeline {
+
         display: flex;
 
-        width: 100%;
+        gap: 1.5rem;
 
-        gap: 18px;
+        width: 100%;
 
         overflow-x: auto;
         overflow-y: hidden;
 
-        padding: 15px 9% 35px;
+        padding: 20px 7% 40px;
 
         /*
-         * Same native touch scrolling approach
-         * as the Process timeline.
+         * Native mobile scrolling
          */
         -webkit-overflow-scrolling: touch;
 
         /*
-         * Snap each card toward the center.
+         * Snap each service into position
          */
         scroll-snap-type: x mandatory;
 
         scroll-behavior: smooth;
 
         /*
-         * Hide scrollbar.
+         * Hide scrollbar
          */
         scrollbar-width: none;
 
         /*
-         * Prevent accidental vertical scrolling
-         * from interfering with horizontal swipe.
+         * Horizontal finger movement
          */
         touch-action: pan-x;
     }
 
-    .services-grid::-webkit-scrollbar {
+
+    .services-timeline::-webkit-scrollbar {
         display: none;
     }
 
 
     /* =====================================
-       SERVICE CARD
+       SERVICE ITEM
     ===================================== */
 
-    .services-grid .svc-card-link {
+    .service-item {
 
         /*
-         * One card occupies most of the screen.
+         * Same structural idea as timeline-item
          */
-        flex: 0 0 82%;
+        display: flex;
 
-        width: 82%;
+        gap: 1.5rem;
+
+        position: relative;
 
         /*
-         * Center each card when scrolling.
+         * Each item occupies almost
+         * the entire mobile screen
+         */
+        flex: 0 0 86%;
+
+        min-width: 86%;
+
+        /*
+         * Snap to center
          */
         scroll-snap-align: center;
+
         scroll-snap-stop: always;
 
         /*
-         * Remove desktop sizing restrictions.
+         * Card appearance
          */
-        max-width: none;
+        padding: 1.5rem;
 
-        /*
-         * Make every card equal height.
-         */
-        height: auto;
+        border: 1px solid rgba(0, 200, 255, .15);
 
-        /*
-         * Prevent flexbox from shrinking cards.
-         */
-        min-width: 0;
-    }
+        background:
+            linear-gradient(
+                135deg,
+                rgba(0, 200, 255, .06),
+                rgba(74, 144, 226, .03)
+            );
 
+        box-shadow:
+            0 0 15px rgba(0, 200, 255, .05);
 
-    .services-grid .svc-card {
-
-        height: 100%;
-
-        margin: 0;
-
-        /*
-         * Keep the card visually stable
-         * while the finger is moving.
-         */
-        transform: none;
+        opacity: .55;
 
         transition:
             opacity .25s ease,
@@ -1174,48 +1171,149 @@ body.menu-open {
 
 
     /* =====================================
-       ACTIVE CARD
+       ACTIVE SERVICE
     ===================================== */
 
-    .services-grid .svc-card-link {
-        opacity: .55;
-    }
+    .service-item.active {
 
-    .services-grid .svc-card-link.active {
         opacity: 1;
+
+        border-color:
+            rgba(0, 200, 255, .4);
+
+        box-shadow:
+            0 0 25px rgba(0, 200, 255, .12);
     }
 
 
     /* =====================================
-       CARD CONTENT
+       SERVICE ICON
     ===================================== */
 
-    .services-grid .svc-title {
-        font-size: 1rem;
-        line-height: 1.35;
+    .service-icon {
+
+        width: 70px;
+        height: 70px;
+
+        flex: 0 0 70px;
+
+        position: relative;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        font-size: 30px;
+
+        line-height: 1;
+
+        border: 1px solid rgba(0, 200, 255, .3);
+
+        box-shadow:
+            0 0 15px rgba(0, 200, 255, .15);
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(0, 200, 255, .12),
+                rgba(74, 144, 226, .05)
+            );
     }
 
-    .services-grid .svc-desc {
-        font-size: .82rem;
-        line-height: 1.65;
+
+    /* =====================================
+       SERVICE NUMBER
+    ===================================== */
+
+    .service-number {
+
+        position: absolute;
+
+        top: -6px;
+
+        right: -6px;
+
+        width: 20px;
+        height: 20px;
+
+        border-radius: 50%;
+
+        background: #00C8FF;
+
+        color: #06131b;
+
+        font-size: 10px;
+
+        font-weight: 700;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
     }
 
-    .services-grid .svc-list {
+
+    /* =====================================
+       SERVICE CONTENT
+    ===================================== */
+
+    .service-content {
+
+        padding: .1rem 0 1rem;
+
+        min-width: 0;
+    }
+
+
+    .service-title {
+
+        font-family: 'Cinzel', serif;
+
+        font-size: .95rem;
+
+        font-weight: 600;
+
+        color: var(--moon-white);
+
+        margin-bottom: .5rem;
+
+        line-height: 1.4;
+    }
+
+
+    .service-desc {
+
+        font-size: .85rem;
+
+        color:
+            rgba(248, 249, 255, .5);
+
+        line-height: 1.7;
+
+        margin-bottom: .8rem;
+    }
+
+
+    .service-list {
+
+        margin: 0;
+
+        padding-left: 1rem;
+
         font-size: .78rem;
+
+        color:
+            rgba(248, 249, 255, .5);
+
         line-height: 1.7;
     }
 
 
-    /* =====================================
-       REMOVE HOVER BEHAVIOUR ON TOUCH
-    ===================================== */
-
-    .services-grid .svc-card:hover {
-        transform: none;
-    }
-
-    .services-grid .svc-card-link:hover {
-        transform: none;
+    .service-list li {
+        margin-bottom: .25rem;
     }
 
 }
