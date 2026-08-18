@@ -957,6 +957,175 @@
             
         }
 
+        /* ==========================================
+        PRICING FAQ
+        ========================================== */
+
+        .pricing-faq {
+            max-width: 900px;
+            margin: 90px auto 0;
+            padding: 0 20px;
+        }
+
+        .pricing-faq-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .pricing-faq-header .section-eyebrow {
+            margin-bottom: 14px;
+        }
+
+        .pricing-faq-header h2 {
+            margin: 0;
+            color: var(--moon-white);
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.7rem, 3vw, 2.5rem);
+            font-weight: 600;
+            line-height: 1.25;
+        }
+
+        .pricing-faq-header h2 em {
+            color: var(--cyan);
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+        }
+
+        .pricing-faq-header p {
+            max-width: 600px;
+            margin: 16px auto 0;
+            color: rgba(248, 249, 255, .5);
+            font-size: .9rem;
+            line-height: 1.75;
+        }
+
+        .pricing-faq-list {
+            border-top: 1px solid rgba(248, 249, 255, .1);
+        }
+
+        .pricing-faq-item {
+            border-bottom: 1px solid rgba(248, 249, 255, .1);
+        }
+
+        .pricing-faq-q {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+
+            padding: 25px 4px;
+
+            text-align: left;
+
+            font-family: 'Cinzel', serif;
+            font-size: clamp(14px, 1.8vw, 17px);
+            font-weight: 600;
+
+            color: var(--moon-white);
+
+            background: transparent;
+            border: none;
+
+            transition: color .3s ease;
+        }
+
+        .pricing-faq-item:hover .pricing-faq-q {
+            color: var(--cyan);
+        }
+
+        /* Plus icon */
+
+        .pricing-faq-plus {
+            position: relative;
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        .pricing-faq-plus::before,
+        .pricing-faq-plus::after {
+            content: '';
+            position: absolute;
+            background: var(--cyan);
+
+            transition:
+                transform .4s ease,
+                opacity .4s ease;
+        }
+
+        .pricing-faq-plus::before {
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            transform: translateY(-50%);
+        }
+
+        .pricing-faq-plus::after {
+            left: 50%;
+            top: 0;
+            height: 100%;
+            width: 1px;
+            transform: translateX(-50%);
+        }
+
+        .pricing-faq-item.open .pricing-faq-plus::after {
+            transform: translateX(-50%) rotate(90deg);
+            opacity: 0;
+        }
+
+        /* Answer */
+
+        .pricing-faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .55s ease;
+        }
+
+        .pricing-faq-a-inner {
+            padding: 0 4px 28px;
+
+            max-width: 75ch;
+
+            color: rgba(248, 249, 255, .52);
+
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 600px) {
+
+            .pricing-faq {
+                margin-top: 65px;
+                padding: 0;
+            }
+
+            .pricing-faq-header {
+                margin-bottom: 30px;
+            }
+
+            .pricing-faq-q {
+                padding: 21px 2px;
+                font-size: 14px;
+                gap: 15px;
+            }
+
+            .pricing-faq-a-inner {
+                padding: 0 2px 24px;
+                font-size: 13px;
+                line-height: 1.75;
+            }
+
+            .pricing-faq-plus {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
     </style>
 </head>
 
@@ -1224,6 +1393,275 @@
                 Want <strong>Custom AI Automations</strong>? LETS TALK!
             </p>
         </section>
+
+        <!-- ==========================================
+            FAQ
+            ========================================== -->
+        <section class="pricing-faq">
+
+            <div class="pricing-faq-header">
+                <span class="section-eyebrow">Frequently Asked Questions</span>
+
+                <h2>
+                    Questions before you
+                    <em>get started?</em>
+                </h2>
+
+                <p>
+                    Everything you need to know about our websites,
+                    AI solutions and business automation services.
+                </p>
+
+                <div class="blue-divider"></div>
+            </div>
+
+
+            <div class="pricing-faq-list">
+
+                <!-- 10 -->
+                <div class="pricing-faq-item">
+                    <button class="pricing-faq-q" aria-expanded="false">
+                        Do I need technical knowledge to use AI automation?
+                        <span class="pricing-faq-plus"></span>
+                    </button>
+
+                    <div class="pricing-faq-a">
+                        <div class="pricing-faq-a-inner">
+                            No. Orbiter Automations designs and implements the automation
+                            system for your business. The aim is to make the finished
+                            solution simple for your team to use without requiring them
+                            to understand the technical processes operating behind it.
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 11 -->
+                <div class="pricing-faq-item">
+                    <button class="pricing-faq-q" aria-expanded="false">
+                        How much does AI automation cost for a small business?
+                        <span class="pricing-faq-plus"></span>
+                    </button>
+
+                    <div class="pricing-faq-a">
+                        <div class="pricing-faq-a-inner">
+                            The cost depends on the type and complexity of automation
+                            required. A simple AI chatbot or lead-capture system will
+                            generally require less development than a fully integrated
+                            business automation workflow. Orbiter Automations can assess
+                            your requirements and recommend a solution based on your
+                            business needs.
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 12 -->
+                <div class="pricing-faq-item">
+                    <button class="pricing-faq-q" aria-expanded="false">
+                        How long does it take to build an AI automation system?
+                        <span class="pricing-faq-plus"></span>
+                    </button>
+
+                    <div class="pricing-faq-a">
+                        <div class="pricing-faq-a-inner">
+                            The development time depends on the complexity of the project,
+                            the number of integrations required and the level of
+                            customisation. Smaller automation systems can generally be
+                            implemented faster than larger systems involving multiple
+                            business processes and integrations.
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 13 -->
+                <div class="pricing-faq-item">
+                    <button class="pricing-faq-q" aria-expanded="false">
+                        Can you build a website with AI features?
+                        <span class="pricing-faq-plus"></span>
+                    </button>
+
+                    <div class="pricing-faq-a">
+                        <div class="pricing-faq-a-inner">
+                            Yes. Orbiter Automations can create modern business websites
+                            that incorporate AI-powered features such as intelligent
+                            chatbots, automated enquiry handling, lead capture and other
+                            customer-facing automation.
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 14 -->
+                <div class="pricing-faq-item">
+                    <button class="pricing-faq-q" aria-expanded="false">
+                        Can you build a website for a small business?
+                        <span class="pricing-faq-plus"></span>
+                    </button>
+
+                    <div class="pricing-faq-a">
+                        <div class="pricing-faq-a-inner">
+                            Yes. Orbiter Automations builds websites for businesses that
+                            need a professional online presence, better customer experience
+                            and a website designed around their business goals.
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 15 -->
+                <div class="pricing-faq-item">
+                    <button class="pricing-faq-q" aria-expanded="false">
+                        What types of businesses can benefit from AI automation?
+                        <span class="pricing-faq-plus"></span>
+                    </button>
+
+                    <div class="pricing-faq-a">
+                        <div class="pricing-faq-a-inner">
+                            AI automation can benefit many types of businesses, including
+                            service businesses, professional services, home-service
+                            companies, e-commerce businesses, agencies, hospitality
+                            businesses, beauty businesses and other companies that
+                            regularly receive customer enquiries, leads, bookings or
+                            repetitive administrative requests.
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 16 -->
+                <div class="pricing-faq-item">
+                    <button class="pricing-faq-q" aria-expanded="false">
+                        Can you automate WhatsApp enquiries?
+                        <span class="pricing-faq-plus"></span>
+                    </button>
+
+                    <div class="pricing-faq-a">
+                        <div class="pricing-faq-a-inner">
+                            Depending on the business’s existing setup and the required
+                            workflow, WhatsApp-based customer enquiries can be incorporated
+                            into an automation system. This can help businesses manage
+                            enquiries, collect customer information and move conversations
+                            towards actions such as bookings or sales.
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 17 -->
+                <div class="pricing-faq-item">
+                    <button class="pricing-faq-q" aria-expanded="false">
+                        What is the difference between an AI chatbot and AI automation?
+                        <span class="pricing-faq-plus"></span>
+                    </button>
+
+                    <div class="pricing-faq-a">
+                        <div class="pricing-faq-a-inner">
+                            An AI chatbot primarily communicates with customers and answers
+                            questions. AI automation is broader and can connect multiple
+                            business processes together. For example, an automated workflow
+                            could receive a customer enquiry, use AI to qualify the lead,
+                            collect information, update a CRM and arrange an appointment.
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 18 -->
+                <div class="pricing-faq-item">
+                    <button class="pricing-faq-q" aria-expanded="false">
+                        Will AI automation replace my employees?
+                        <span class="pricing-faq-plus"></span>
+                    </button>
+
+                    <div class="pricing-faq-a">
+                        <div class="pricing-faq-a-inner">
+                            AI automation is generally designed to support employees rather
+                            than simply replace them. It can take care of repetitive tasks
+                            and routine enquiries so employees can spend more time on
+                            customer relationships, decision-making and other work that
+                            requires human judgement.
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 19 -->
+                <div class="pricing-faq-item">
+                    <button class="pricing-faq-q" aria-expanded="false">
+                        Is AI automation suitable for businesses in the UK and Europe?
+                        <span class="pricing-faq-plus"></span>
+                    </button>
+
+                    <div class="pricing-faq-a">
+                        <div class="pricing-faq-a-inner">
+                            Yes. Orbiter Automations focuses on creating digital, AI and
+                            automation solutions for businesses in the UK and Europe, with
+                            solutions tailored to individual business processes and
+                            customer needs.
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 20 -->
+                <div class="pricing-faq-item">
+                    <button class="pricing-faq-q" aria-expanded="false">
+                        Why should I choose Orbiter Automations?
+                        <span class="pricing-faq-plus"></span>
+                    </button>
+
+                    <div class="pricing-faq-a">
+                        <div class="pricing-faq-a-inner">
+                            Orbiter Automations focuses on practical technology rather than
+                            adding AI simply for the sake of it. We combine websites, AI
+                            solutions and business automation to create systems that help
+                            businesses improve customer experience, capture more
+                            opportunities and reduce repetitive manual work.
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 21 -->
+                <div class="pricing-faq-item">
+                    <button class="pricing-faq-q" aria-expanded="false">
+                        How do I get started with AI automation?
+                        <span class="pricing-faq-plus"></span>
+                    </button>
+
+                    <div class="pricing-faq-a">
+                        <div class="pricing-faq-a-inner">
+                            The first step is to identify the repetitive tasks, customer
+                            interactions or business processes that are taking the most
+                            time. Orbiter Automations can then assess your current workflow
+                            and recommend where AI and automation could provide the most
+                            value.
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 22 -->
+                <div class="pricing-faq-item">
+                    <button class="pricing-faq-q" aria-expanded="false">
+                        Can Orbiter Automations create a customised automation system for my business?
+                        <span class="pricing-faq-plus"></span>
+                    </button>
+
+                    <div class="pricing-faq-a">
+                        <div class="pricing-faq-a-inner">
+                            Yes. Every business has different processes, customers and
+                            requirements. Orbiter Automations can design customised AI and
+                            automation solutions based on the specific workflow, goals and
+                            systems of your business.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
         <!-- CTA -->
         <section class="pricing-cta">
 
@@ -1294,6 +1732,46 @@
 
             openNeomaSafe();
         }
+
+    /* ==========================================
+       PRICING FAQ ACCORDION
+       ========================================== */
+
+    document.querySelectorAll('.pricing-faq-q').forEach(function(button) {
+
+        button.addEventListener('click', function() {
+
+            const item = button.closest('.pricing-faq-item');
+            const answer = item.querySelector('.pricing-faq-a');
+            const isOpen = item.classList.contains('open');
+
+            /* Close all other FAQ items */
+            document.querySelectorAll('.pricing-faq-item').forEach(function(otherItem) {
+
+                otherItem.classList.remove('open');
+
+                const otherButton = otherItem.querySelector('.pricing-faq-q');
+                const otherAnswer = otherItem.querySelector('.pricing-faq-a');
+
+                otherButton.setAttribute('aria-expanded', 'false');
+                otherAnswer.style.maxHeight = null;
+
+            });
+
+            /* Open clicked item */
+            if (!isOpen) {
+
+                item.classList.add('open');
+
+                button.setAttribute('aria-expanded', 'true');
+
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+
+            }
+
+        });
+
+    });
     </script>
 
 </body>
