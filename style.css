@@ -1026,8 +1026,8 @@ body.menu-open {
 
 .svc-title {
     font-family: 'Cinzel', serif;
-    font-size: 1.05rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 660;
 
     color: var(--moon-white);
 
@@ -1270,7 +1270,7 @@ body.menu-open {
 
         font-size: .85rem;
 
-        color: rgba(248, 249, 255, .5);
+        color: var(--text-muted);
 
         line-height: 1.7;
 
@@ -1286,7 +1286,7 @@ body.menu-open {
 
         font-size: .78rem;
 
-        color: rgba(248, 249, 255, .5);
+        color: var(--text-muted);
 
         line-height: 1.7;
     }
