@@ -1087,6 +1087,17 @@ body.menu-open {
     opacity: .6;
 }
 
+.svc-learn-more {
+    margin-top: 1.2rem;
+
+    color: var(--cyan);
+
+    font-size: .78rem;
+    font-weight: 600;
+
+    letter-spacing: .04em;
+}
+
 /* Desktop */
 .services-desktop {
     display: grid;
