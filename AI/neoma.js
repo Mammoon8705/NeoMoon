@@ -113,14 +113,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // CTA-banner duplicate id – select by position (second #open-ai-nav)
-    document.querySelectorAll("#open-ai-nav").forEach(function (el) {
-        el.addEventListener("click", function (e) {
-            e.preventDefault();
-            window.openNeoma();
-        });
-    });
-
     // Pricing plan buttons (.ai-plan)
     document.querySelectorAll(".ai-plan").forEach(function (btn) {
         btn.addEventListener("click", function (e) {
