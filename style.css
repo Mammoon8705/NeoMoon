@@ -2723,7 +2723,6 @@ footer {
 
 @media (max-width:768px) {
 
-    .services-grid,
     .pricing-grid,
     .testi-grid {
 
@@ -2743,7 +2742,6 @@ footer {
         scrollbar-width: none;
     }
 
-    .services-grid::-webkit-scrollbar,
     .pricing-grid::-webkit-scrollbar,
     .testi-grid::-webkit-scrollbar {
         display: none;

@@ -622,7 +622,6 @@ function autoScrollRow(selector) {
 
 }
 
-autoScrollRow('.services-grid');
 autoScrollRow('.pricing-grid');
 autoScrollRow('.testi-grid');
 
