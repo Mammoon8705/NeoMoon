@@ -810,14 +810,6 @@ body.menu-open {
     margin-right: auto;
 }
 
-.hero-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    animation: fadeUp .8s .45s ease both;
-    margin-top: 2rem;
-}
 
 .btn-primary {
     font-family: 'Cinzel', serif;
@@ -910,6 +902,12 @@ body.menu-open {
     }
 
     .hero-actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        animation: fadeUp .8s .45s ease both;
+        margin-top: 2rem;
         flex-direction: column;
         width: 100%;
     }
