@@ -142,7 +142,15 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     });
+
+    document.querySelectorAll(".open-ai-nav").forEach(function (el) {
+        el.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.openNeoma();
+        });
+    });
 });
+
 
 // Neoma AI
 function initializeNeoma() {
