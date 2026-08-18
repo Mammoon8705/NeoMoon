@@ -1155,7 +1155,11 @@ body.menu-open {
 .services-mobile .service-item {
     display: block;
 
+    color: inherit;
+
     position: relative;
+
+    text-decoration: none;
 
     flex: 0 0 86%;
     min-width: 86%;
@@ -1183,6 +1187,9 @@ body.menu-open {
         box-shadow .25s ease;
 }
 
+.services-mobile .service-item:visited {
+    color: inherit;
+}
 
 /* Active card */
 
