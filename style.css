@@ -1136,169 +1136,179 @@ body.menu-open {
     }
 
 
-    /* =====================================
-       MOBILE SERVICE CARD
-    ===================================== */
+/* =========================================
+   MOBILE SERVICE CARD
+========================================= */
 
-    .services-mobile .service-item {
+.services-mobile .service-item {
+    display: block;
 
-        display: flex;
+    position: relative;
 
-        gap: 1.5rem;
+    flex: 0 0 86%;
+    min-width: 86%;
 
-        position: relative;
+    padding: 1.5rem;
 
-        flex: 0 0 86%;
+    border: 1px solid rgba(0, 200, 255, .15);
+    border-radius: 16px;
 
-        min-width: 86%;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 200, 255, .06),
+            rgba(74, 144, 226, .03)
+        );
 
-        scroll-snap-align: center;
+    opacity: .55;
 
-        scroll-snap-stop: always;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
 
-        padding: 1.5rem;
+    transition:
+        opacity .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
 
-        border: 1px solid rgba(0, 200, 255, .15);
 
-        background:
-            linear-gradient(
-                135deg,
-                rgba(0, 200, 255, .06),
-                rgba(74, 144, 226, .03)
-            );
+/* Active card */
 
-        opacity: .55;
+.services-mobile .service-item.active {
+    opacity: 1;
 
-        transition:
-            opacity .25s ease,
-            border-color .25s ease,
-            box-shadow .25s ease;
-    }
+    border-color: rgba(0, 200, 255, .4);
 
+    box-shadow:
+        0 0 25px rgba(0, 200, 255, .12);
+}
 
-    .services-mobile .service-item.active {
-        opacity: 1;
 
-        border-color:
-            rgba(0, 200, 255, .4);
+/* =========================================
+   ICON
+========================================= */
 
-        box-shadow:
-            0 0 25px rgba(0, 200, 255, .12);
-    }
+.services-mobile .service-icon {
 
+    width: 65px;
+    height: 65px;
 
-    /* =====================================
-       ICON
-    ===================================== */
+    position: relative;
 
-    .services-mobile .service-icon {
+    display: flex;
 
-        width: 70px;
-        height: 70px;
+    align-items: center;
+    justify-content: center;
 
-        flex: 0 0 70px;
+    font-size: 28px;
 
-        position: relative;
+    line-height: 1;
 
-        display: flex;
+    margin-bottom: 1.2rem;
 
-        align-items: center;
+    border: 1px solid rgba(0, 200, 255, .3);
 
-        justify-content: center;
+    box-shadow:
+        0 0 15px rgba(0, 200, 255, .15);
 
-        font-size: 30px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 200, 255, .12),
+            rgba(74, 144, 226, .05)
+        );
+}
 
-        line-height: 1;
 
-        border: 1px solid rgba(0, 200, 255, .3);
+/* Number */
 
-        box-shadow:
-            0 0 15px rgba(0, 200, 255, .15);
+.services-mobile .service-number {
 
-        background:
-            linear-gradient(
-                135deg,
-                rgba(0, 200, 255, .12),
-                rgba(74, 144, 226, .05)
-            );
-    }
+    position: absolute;
 
+    top: -6px;
+    right: -6px;
 
-    .services-mobile .service-number {
+    width: 20px;
+    height: 20px;
 
-        position: absolute;
+    border-radius: 50%;
 
-        top: -6px;
-        right: -6px;
+    background: #00C8FF;
 
-        width: 20px;
-        height: 20px;
+    color: #06131b;
 
-        border-radius: 50%;
+    font-size: 10px;
+    font-weight: 700;
 
-        background: #00C8FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        color: #06131b;
 
-        font-size: 10px;
+/* =========================================
+   CONTENT
+========================================= */
 
-        font-weight: 700;
+.services-mobile .service-content {
+    padding: 0;
 
-        display: flex;
+    min-width: 0;
 
-        align-items: center;
+    width: 100%;
+}
 
-        justify-content: center;
-    }
 
+/* Title */
 
-    .services-mobile .service-content {
-        padding: .1rem 0 1rem;
-        min-width: 0;
-    }
+.services-mobile .service-title {
 
+    font-family: 'Cinzel', serif;
 
-    .services-mobile .service-title {
+    font-size: 1rem;
 
-        font-family: 'Cinzel', serif;
+    font-weight: 600;
 
-        font-size: .95rem;
+    color: var(--moon-white);
 
-        font-weight: 600;
+    line-height: 1.35;
 
-        color: black;
+    margin-bottom: .65rem;
+}
 
-        margin-bottom: .5rem;
 
-        line-height: 1.4;
-    }
+/* Description */
 
+.services-mobile .service-desc {
 
-    .services-mobile .service-desc {
+    font-size: .84rem;
 
-        font-size: .85rem;
+    color: rgba(248, 249, 255, .55);
 
-        color: var(--text-muted);
+    line-height: 1.65;
 
-        line-height: 1.7;
+    margin: 0 0 1rem;
+}
 
-        margin-bottom: .8rem;
-    }
 
+/* List */
 
-    .services-mobile .service-list {
+.services-mobile .service-list {
 
-        margin: 0;
+    margin: 0;
 
-        padding-left: 1rem;
+    padding-left: 1.1rem;
 
-        font-size: .78rem;
+    font-size: .78rem;
 
-        color: var(--text-muted);
+    color: rgba(248, 249, 255, .55);
 
-        line-height: 1.7;
-    }
+    line-height: 1.65;
+}
 
+.services-mobile .service-list li {
+    margin-bottom: .3rem;
 }
 
 
