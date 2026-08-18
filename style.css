@@ -1009,19 +1009,27 @@ body.menu-open {
     overflow: hidden;
 
     transition:
-        transform .35s ease,
-        box-shadow .35s ease,
-        border-color .35s ease;
+        transform .3s cubic-bezier(.2, .8, .2, 1),
+        box-shadow .3s ease,
+        border-color .3s ease,
+        background .3s ease;
 }
 
 .svc-card-link:hover .svc-card {
-    transform: translateY(-6px);
+    transform: translateY(-10px) scale(1.04);
 
-    border-color: rgba(0, 200, 255, .35);
+    border-color: rgba(0, 200, 255, .65);
 
     box-shadow:
-        0 15px 45px rgba(74, 144, 226, .12),
-        0 0 25px rgba(0, 200, 255, .05);
+        0 20px 50px rgba(0, 0, 0, .12),
+        0 0 35px rgba(0, 200, 255, .18),
+        0 0 0 1px rgba(0, 200, 255, .15);
+
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        rgba(240, 250, 255, .98)
+    );
 }
 
 .svc-title {
