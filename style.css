@@ -997,9 +997,9 @@ body.menu-open {
     height: 100%;
     padding: 2rem 1.8rem;
 
-    background: #fff;
+    background: var(--steel);
 
-    border: 1px solid rgba(74, 144, 226, .12);
+    border: 1px solid var(--border);
     border-radius: 16px;
 
     box-shadow:
@@ -1029,7 +1029,7 @@ body.menu-open {
     font-size: 1.05rem;
     font-weight: 600;
 
-    color: var(--text-dark);
+    color: var(--moon-white);
 
     line-height: 1.4;
 
@@ -1258,7 +1258,7 @@ body.menu-open {
 
         font-weight: 600;
 
-        color: var(--moon-white);
+        color: black;
 
         margin-bottom: .5rem;
 
