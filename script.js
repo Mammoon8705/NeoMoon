@@ -140,11 +140,12 @@ for (let i = 0; i < 40; i++) {
 
 /* =========================================
    MOBILE SERVICES SWIPE
-   SAME LOGIC AS PROCESS
 ========================================= */
 
 const serviceCards =
-    document.querySelectorAll('.services-grid .svc-card-link');
+    document.querySelectorAll(
+        '.services-mobile .service-item'
+    );
 
 
 serviceCards.forEach(card => {
@@ -163,6 +164,8 @@ serviceCards.forEach(card => {
 
 
 function updateActiveServiceCard() {
+
+    if (!serviceCards.length) return;
 
     serviceCards.forEach(card => {
         card.classList.remove('active');
@@ -191,7 +194,6 @@ function updateActiveServiceCard() {
         if (distance < closestDistance) {
 
             closestDistance = distance;
-
             closest = card;
 
         }
@@ -199,20 +201,17 @@ function updateActiveServiceCard() {
     });
 
 
-    if (closest) {
-        closest.classList.add('active');
-    }
-
+    closest.classList.add('active');
 }
 
 
-const servicesGrid =
-    document.querySelector('.services-grid');
+const servicesTimeline =
+    document.querySelector('.services-mobile');
 
 
-if (servicesGrid) {
+if (servicesTimeline) {
 
-    servicesGrid.addEventListener(
+    servicesTimeline.addEventListener(
         'scroll',
         updateActiveServiceCard
     );
