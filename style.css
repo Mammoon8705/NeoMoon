@@ -1164,6 +1164,10 @@ body.menu-open {
     padding: 0 5%;
 }
 
+.why-header .section-title {
+    color: var(--moon-white)
+}
+
 .why-grid {
     max-width: 1200px;
     margin: 0 auto;
