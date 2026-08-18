@@ -629,19 +629,17 @@ body.menu-open {
 @media(max-width:768px) {
 
     .nav-logo img {
-
         width: 34px;
-
         height: 34px;
-
     }
 
     .nav-logo {
-
         font-size: 1rem;
-
     }
 
+    .nav-cta {
+        display: none;
+    }
 }
 
 
