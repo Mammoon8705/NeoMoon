@@ -1087,17 +1087,6 @@ body.menu-open {
     opacity: .6;
 }
 
-.svc-learn-more {
-    margin-top: 1.2rem;
-
-    color: var(--cyan);
-
-    font-size: .78rem;
-    font-weight: 600;
-
-    letter-spacing: .04em;
-}
-
 /* Desktop */
 .services-desktop {
     display: grid;
@@ -1392,7 +1381,7 @@ body.menu-open {
 
 #calculator {
     padding: 90px 5% 100px;
-    background: var(--cream)
+    background: var(--cream);
     position: relative;
     overflow: hidden;
 }
