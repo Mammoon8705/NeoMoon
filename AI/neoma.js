@@ -130,19 +130,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // HERO BOOK MEETING BUTTON
-    const bookMeeting = document.getElementById("book-meeting");
+    const bookMeeting = document.querySelectorAll(".book-meeting").forEach(function (button) {
 
-    if (bookMeeting) {
-        bookMeeting.addEventListener("click", function (e) {
-            e.preventDefault();
+        if (bookMeeting) {
+            bookMeeting.addEventListener("click", function (e) {
+                e.preventDefault();
 
-            // Open Neoma
-            window.openNeoma();
+                // Open Neoma
+                window.openNeoma();
 
-            // Tell Neoma to start booking
-            window.startNeomaBooking();
-        });
-    }
+                // Tell Neoma to start booking
+                window.startNeomaBooking();
+            });
+        }
+    });
 });
 
 // Neoma AI
