@@ -310,6 +310,48 @@ button {
     line-height: 1.8
 }
 
+/* Calculator*/
+.calculator-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: .7rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--moon-blue);
+    margin-bottom: .8rem;
+    display: block
+}
+
+.calculator-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1.2;
+    margin-bottom: 1rem
+}
+
+.calculator-title em {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--moon-blue);
+    font-weight: 400
+}
+
+.calculator-title.light {
+    color: var(--moon-white)
+}
+
+.calculator-title.light em {
+    color: var(--cyan)
+}
+
+.calculator-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    max-width: 1200px;
+    line-height: 1.8
+}
+
 .blue-divider {
     width: 60px;
     height: 2px;
@@ -317,6 +359,8 @@ button {
     margin: 1.2rem 0 2.8rem;
     border-radius: 2px
 }
+
+
 
 /* ──────────────────────────────────────
    NAVBAR
@@ -1221,6 +1265,12 @@ body.menu-open {
     background: var(--cream)
     position: relative;
     overflow: hidden;
+}
+
+.calculator-header {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 5%
 }
 
 
