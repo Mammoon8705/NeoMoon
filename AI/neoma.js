@@ -33,7 +33,7 @@ const html = `
 
         <div class="neoma-profile">
 
-            <img src="Pic/photo.jpg" alt="Neoma">
+            <img src="Pic/logo.png" alt="Neoma">
 
             <div>
 
