@@ -2755,6 +2755,67 @@ footer {
     color: var(--cyan)
 }
 
+.social-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.social-btn {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+    border: 1px solid var(--border-light);
+
+    background: rgba(255, 255, 255, 0.02);
+
+    color: rgba(248, 249, 255, .55);
+
+    text-decoration: none;
+
+    font-size: 1rem;
+
+    transition: all .3s ease;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+}
+
+/* WhatsApp */
+.social-btn.whatsapp:hover {
+    color: #25D366;
+    border-color: #25D366;
+    background: rgba(37, 211, 102, .1);
+}
+
+/* Instagram */
+.social-btn.instagram:hover {
+    color: #E4405F;
+    border-color: #E4405F;
+    background: rgba(228, 64, 95, .1);
+}
+
+/* X */
+.social-btn.x:hover {
+    color: #fff;
+    border-color: #fff;
+    background: rgba(255, 255, 255, .08);
+}
+
+/* LinkedIn */
+.social-btn.linkedin:hover {
+    color: #0A66C2;
+    border-color: #0A66C2;
+    background: rgba(10, 102, 194, .1);
+}
+
 /* ── CTA BANNER ── */
 .cta-banner {
     background: linear-gradient(135deg, var(--steel), var(--obsidian));
