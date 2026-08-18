@@ -1293,7 +1293,7 @@ body.menu-open {
 
     font-weight: 600;
 
-    color: var(--moon-blue-glow);
+    color: var(--cyan);
 
     white-space: nowrap;
 }
@@ -1329,12 +1329,12 @@ body.menu-open {
 
     border-radius: 50%;
 
-    background: var(--moon-blue-glow);
+    background: var(--cyan);
 
     border: 3px solid #192838;
 
     box-shadow:
-        0 0 0 1.5px var(--moon-blue-glow);
+        0 0 0 1.5px var(--cyan);
 
     cursor: pointer;
 
@@ -1355,12 +1355,12 @@ body.menu-open {
 
     border-radius: 50%;
 
-    background: var(--moon-blue-glow);
+    background: var(--cyan);
 
     border: 3px solid #192838;
 
     box-shadow:
-        0 0 0 1.5px var(--moon-blue-glow);
+        0 0 0 1.5px var(--cyan);
 
     cursor: pointer;
 }
@@ -1606,11 +1606,11 @@ body.menu-open {
 .Neoma-consult-button {
     min-width: 290px;
 
-    border: 1px solid var(--moon-blue-glow);
+    border: 1px solid var(--cyan);
 
     background: transparent;
 
-    color: var(--moon-blue-glow);
+    color: var(--cyan);
 }
 
 
