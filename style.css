@@ -1270,7 +1270,7 @@ body.menu-open {
 
     font-weight: 600;
 
-    color: var(--moon-white);
+    color: black;
 
     line-height: 1.35;
 
@@ -1284,7 +1284,7 @@ body.menu-open {
 
     font-size: .84rem;
 
-    color: rgba(248, 249, 255, .55);
+    color: var(--text-muted);
 
     line-height: 1.65;
 
@@ -1302,7 +1302,7 @@ body.menu-open {
 
     font-size: .78rem;
 
-    color: rgba(248, 249, 255, .55);
+    color: var(--text-muted);
 
     line-height: 1.65;
 }
