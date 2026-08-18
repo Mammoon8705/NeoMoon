@@ -1208,6 +1208,583 @@ body.menu-open {
     line-height: 1.7
 }
 
+/* =========================================================
+   Neoma MISSED CALL CALCULATOR
+========================================================= */
+
+#calculator {
+    padding: 90px 5% 100px;
+    background: #f5f5f5;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Main calculator */
+
+.Neoma-calculator-container {
+    max-width: 1450px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    border-radius: 28px;
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 60px rgba(13, 27, 42, .08);
+}
+
+
+/* =========================================================
+   LEFT PANEL
+========================================================= */
+
+.Neoma-controls {
+    background: #192838;
+
+    padding: 48px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 38px;
+}
+
+
+.Neoma-control {
+    width: 100%;
+}
+
+
+.Neoma-control-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 17px;
+
+    gap: 20px;
+}
+
+
+.Neoma-control-header span {
+    font-family: 'DM Sans', sans-serif;
+
+    font-size: 1.05rem;
+
+    font-weight: 400;
+
+    color: #f5f2ea;
+
+    line-height: 1.3;
+}
+
+
+.Neoma-control-header strong {
+    font-family: 'DM Sans', sans-serif;
+
+    font-size: 1.5rem;
+
+    font-weight: 600;
+
+    color: #a990ff;
+
+    white-space: nowrap;
+}
+
+
+/* Slider */
+
+.Neoma-control input[type="range"] {
+    width: 100%;
+    height: 7px;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    background: #284258;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+
+/* Chrome / Edge / Safari */
+
+.Neoma-control input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+
+    width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+
+    background: #a990ff;
+
+    border: 3px solid #192838;
+
+    box-shadow:
+        0 0 0 1.5px #a990ff;
+
+    cursor: pointer;
+
+    transition: transform .2s ease;
+}
+
+
+.Neoma-control input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.12);
+}
+
+
+/* Firefox */
+
+.Neoma-control input[type="range"]::-moz-range-thumb {
+    width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+
+    background: #a990ff;
+
+    border: 3px solid #192838;
+
+    box-shadow:
+        0 0 0 1.5px #a990ff;
+
+    cursor: pointer;
+}
+
+
+/* Slider filled section */
+
+.Neoma-control input[type="range"] {
+    background:
+        linear-gradient(
+            to right,
+            #29475e 0%,
+            #29475e 50%,
+            #29475e 100%
+        );
+}
+
+
+/* Description */
+
+.Neoma-control p {
+    margin-top: 12px;
+
+    font-size: .82rem;
+
+    line-height: 1.6;
+
+    color: #91a0ae;
+}
+
+
+/* =========================================================
+   RIGHT PANEL
+========================================================= */
+
+.Neoma-results {
+    background: #eeeae0;
+
+    padding: 28px 48px 42px;
+
+    color: #263746;
+}
+
+
+.Neoma-results-header {
+    text-align: center;
+
+    padding-bottom: 21px;
+
+    border-bottom:
+        3px dashed rgba(38, 55, 70, .22);
+}
+
+
+.Neoma-results-header h2 {
+    margin: 0;
+
+    font-family: 'DM Sans', sans-serif;
+
+    font-size: 1.75rem;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    letter-spacing: .01em;
+
+    color: #172938;
+}
+
+
+.Neoma-results-header span {
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: .85rem;
+
+    color: #8b918e;
+}
+
+
+/* Result body */
+
+.Neoma-results-body {
+    padding-top: 40px;
+}
+
+
+.Neoma-result-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 20px;
+}
+
+
+.Neoma-result-row span {
+    font-size: 1rem;
+
+    color: #475561;
+}
+
+
+.Neoma-result-row strong {
+    font-size: 1rem;
+
+    font-weight: 500;
+
+    color: #3d4d59;
+
+    white-space: nowrap;
+}
+
+
+/* Divider */
+
+.Neoma-result-divider {
+    height: 3px;
+
+    background: #263746;
+
+    margin: 28px 0 26px;
+}
+
+
+/* Recovered */
+
+.Neoma-recovered-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+
+.Neoma-recovered-row span {
+    font-size: 1rem;
+
+    color: #475561;
+}
+
+
+.Neoma-recovered-row strong {
+    font-size: clamp(2.3rem, 4vw, 3.5rem);
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    color: #10824f;
+
+    letter-spacing: -.04em;
+
+    white-space: nowrap;
+}
+
+
+/* ROI */
+
+.Neoma-roi-row {
+    margin-top: 5px;
+}
+
+
+.Neoma-roi-row strong {
+    font-size: 1rem;
+
+    color: #475561;
+}
+
+
+/* Disclaimer */
+
+.Neoma-disclaimer {
+    margin-top: 52px;
+
+    max-width: 720px;
+
+    font-size: .75rem;
+
+    line-height: 1.55;
+
+    color: #858c8d;
+}
+
+
+/* =========================================================
+   CTA BUTTONS
+========================================================= */
+
+.Neoma-calculator-actions {
+    max-width: 1450px;
+
+    margin: 45px auto 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 24px;
+}
+
+
+.Neoma-demo-button,
+.Neoma-consult-button {
+    min-height: 62px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 0 30px;
+
+    border-radius: 50px;
+
+    font-family: 'DM Sans', sans-serif;
+
+    font-size: 1rem;
+
+    font-weight: 500;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+
+/* Demo */
+
+.Neoma-demo-button {
+    background:
+        linear-gradient(
+            135deg,
+            #6550e8,
+            #7054df
+        );
+
+    color: white;
+
+    box-shadow:
+        0 8px 25px rgba(101, 80, 232, .2);
+}
+
+
+.Neoma-demo-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 35px rgba(101, 80, 232, .3);
+}
+
+
+.Neoma-demo-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #111;
+
+    font-size: 1.1rem;
+
+    font-weight: 700;
+}
+
+
+/* Consultation */
+
+.Neoma-consult-button {
+    min-width: 290px;
+
+    border: 1px solid #7564ed;
+
+    background: transparent;
+
+    color: #6555db;
+}
+
+
+.Neoma-consult-button:hover {
+    transform: translateY(-3px);
+
+    background: rgba(117, 100, 237, .06);
+
+    box-shadow:
+        0 8px 25px rgba(117, 100, 237, .12);
+}
+
+
+.Neoma-consult-button span {
+    font-size: 1.1rem;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .Neoma-calculator-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .Neoma-controls {
+        padding: 40px;
+    }
+
+
+    .Neoma-results {
+        padding: 40px;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    #calculator {
+        padding: 60px 5% 70px;
+    }
+
+
+    .Neoma-calculator-container {
+        border-radius: 20px;
+    }
+
+
+    .Neoma-controls {
+        padding: 30px 25px;
+
+        gap: 32px;
+    }
+
+
+    .Neoma-control-header span {
+        font-size: .95rem;
+    }
+
+
+    .Neoma-control-header strong {
+        font-size: 1.25rem;
+    }
+
+
+    .Neoma-results {
+        padding: 28px 25px 35px;
+    }
+
+
+    .Neoma-results-header h2 {
+        font-size: 1.35rem;
+    }
+
+
+    .Neoma-results-body {
+        padding-top: 30px;
+    }
+
+
+    .Neoma-result-row span,
+    .Neoma-recovered-row span {
+        font-size: .88rem;
+    }
+
+
+    .Neoma-result-row strong {
+        font-size: .9rem;
+    }
+
+
+    .Neoma-recovered-row {
+        align-items: flex-end;
+    }
+
+
+    .Neoma-recovered-row strong {
+        font-size: 2.2rem;
+    }
+
+
+    .Neoma-disclaimer {
+        margin-top: 38px;
+    }
+
+
+    .Neoma-calculator-actions {
+        flex-direction: column;
+
+        gap: 15px;
+
+        margin-top: 30px;
+    }
+
+
+    .Neoma-demo-button,
+    .Neoma-consult-button {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+}
+
 /* ──────────────────────────────────────
    PROCESS
 ────────────────────────────────────── */

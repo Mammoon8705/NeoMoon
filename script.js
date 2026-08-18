@@ -222,6 +222,242 @@ if (servicesGrid) {
 
 updateActiveServiceCard();
 
+/* =========================================================
+   Neoma MISSED CALL CALCULATOR
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const callsSlider =
+        document.getElementById("callsSlider");
+
+    const missedSlider =
+        document.getElementById("missedSlider");
+
+    const bookingSlider =
+        document.getElementById("bookingSlider");
+
+    const jobSlider =
+        document.getElementById("jobSlider");
+
+
+    /* Calculator isn't on this page */
+
+    if (
+        !callsSlider ||
+        !missedSlider ||
+        !bookingSlider ||
+        !jobSlider
+    ) {
+        return;
+    }
+
+
+    /* =========================================
+       DISPLAY ELEMENTS
+    ========================================= */
+
+    const callsValue =
+        document.getElementById("callsValue");
+
+    const missedValue =
+        document.getElementById("missedValue");
+
+    const bookingValue =
+        document.getElementById("bookingValue");
+
+    const jobValue =
+        document.getElementById("jobValue");
+
+
+    const missedCallsResult =
+        document.getElementById("missedCallsResult");
+
+    const lostJobsResult =
+        document.getElementById("lostJobsResult");
+
+    const lostRevenueResult =
+        document.getElementById("lostRevenueResult");
+
+    const recoveredResult =
+        document.getElementById("recoveredResult");
+
+    const roiResult =
+        document.getElementById("roiResult");
+
+
+    /* =========================================
+       FORMATTERS
+    ========================================= */
+
+    function formatMoney(value) {
+
+        return "$" +
+            Math.round(value).toLocaleString("en-US");
+
+    }
+
+
+    function formatNumber(value) {
+
+        return Math.round(value)
+            .toLocaleString("en-US");
+
+    }
+
+
+    /* =========================================
+       CALCULATE
+    ========================================= */
+
+    function calculateNeomaROI() {
+
+        const callsPerWeek =
+            Number(callsSlider.value);
+
+        const missedPercent =
+            Number(missedSlider.value) / 100;
+
+        const bookingPercent =
+            Number(bookingSlider.value) / 100;
+
+        const averageJobValue =
+            Number(jobSlider.value);
+
+
+        /* =====================================
+           MONTHLY CALLS
+
+           52 weeks / 12 months
+           = 4.3333 weeks per month
+        ===================================== */
+
+        const monthlyCalls =
+            callsPerWeek * 52 / 12;
+
+
+        /* =====================================
+           MISSED CALLS
+        ===================================== */
+
+        const missedCalls =
+            monthlyCalls * missedPercent;
+
+
+        /* =====================================
+           JOBS LOST
+        ===================================== */
+
+        const lostJobs =
+            missedCalls * bookingPercent;
+
+
+        /* =====================================
+           REVENUE LOST
+        ===================================== */
+
+        const lostRevenue =
+            lostJobs * averageJobValue;
+
+
+        /* =====================================
+           Neoma COST
+        ===================================== */
+
+        const NeomaCost = 399;
+
+
+        /* =====================================
+           RECOVERED REVENUE
+        ===================================== */
+
+        const recovered =
+            lostRevenue - NeomaCost;
+
+
+        /* =====================================
+           RETURN ON SPEND
+
+           Revenue recovered before Neoma cost
+           divided by Neoma cost.
+        ===================================== */
+
+        const roi =
+            lostRevenue / NeomaCost;
+
+
+        /* =====================================
+           UPDATE LEFT SIDE
+        ===================================== */
+
+        callsValue.textContent =
+            formatNumber(callsPerWeek);
+
+        missedValue.textContent =
+            Math.round(missedPercent * 100) + "%";
+
+        bookingValue.textContent =
+            Math.round(bookingPercent * 100) + "%";
+
+        jobValue.textContent =
+            formatMoney(averageJobValue);
+
+
+        /* =====================================
+           UPDATE RIGHT SIDE
+        ===================================== */
+
+        missedCallsResult.textContent =
+            formatNumber(missedCalls);
+
+        lostJobsResult.textContent =
+            formatNumber(lostJobs);
+
+        lostRevenueResult.textContent =
+            formatMoney(lostRevenue);
+
+        recoveredResult.textContent =
+            formatMoney(recovered);
+
+        roiResult.textContent =
+            Math.round(roi) + "×";
+
+    }
+
+
+    /* =========================================
+       SLIDER EVENTS
+    ========================================= */
+
+    callsSlider.addEventListener(
+        "input",
+        calculateNeomaROI
+    );
+
+    missedSlider.addEventListener(
+        "input",
+        calculateNeomaROI
+    );
+
+    bookingSlider.addEventListener(
+        "input",
+        calculateNeomaROI
+    );
+
+    jobSlider.addEventListener(
+        "input",
+        calculateNeomaROI
+    );
+
+
+    /* =========================================
+       INITIAL CALCULATION
+    ========================================= */
+
+    calculateNeomaROI();
+
+});
+
 
 /* ── CIRCULAR PROCESS ── */
 (function () {

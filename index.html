@@ -295,6 +295,195 @@
         </div>
     </section>
 
+    <!-- =========================================
+        Neoma ROI CALCULATOR
+    ========================================= -->
+
+    <section id="calculator" class="Neoma-calculator">
+
+        <div class="Neoma-calculator-container">
+
+            <!-- LEFT: CONTROLS -->
+            <div class="Neoma-controls">
+
+                <div class="Neoma-control">
+
+                    <div class="Neoma-control-header">
+                        <span>Inbound calls per week</span>
+                        <strong id="callsValue">60</strong>
+                    </div>
+
+                    <input
+                        type="range"
+                        id="callsSlider"
+                        min="10"
+                        max="200"
+                        step="1"
+                        value="60"
+                    >
+
+                    <p>
+                        Count everything — mobile, office line, the number on the truck.
+                    </p>
+
+                </div>
+
+
+                <div class="Neoma-control">
+
+                    <div class="Neoma-control-header">
+                        <span>Share you don't answer</span>
+                        <strong id="missedValue">28%</strong>
+                    </div>
+
+                    <input
+                        type="range"
+                        id="missedSlider"
+                        min="0"
+                        max="100"
+                        step="1"
+                        value="28"
+                    >
+
+                    <p>
+                        Include voicemails nobody called back and rings during other calls.
+                    </p>
+
+                </div>
+
+
+                <div class="Neoma-control">
+
+                    <div class="Neoma-control-header">
+                        <span>Of those, how many would book</span>
+                        <strong id="bookingValue">45%</strong>
+                    </div>
+
+                    <input
+                        type="range"
+                        id="bookingSlider"
+                        min="0"
+                        max="100"
+                        step="1"
+                        value="45"
+                    >
+
+                    <p>
+                        Roughly your normal booking rate on a live answered call.
+                    </p>
+
+                </div>
+
+
+                <div class="Neoma-control">
+
+                    <div class="Neoma-control-header">
+                        <span>Average job value</span>
+                        <strong id="jobValue">$425</strong>
+                    </div>
+
+                    <input
+                        type="range"
+                        id="jobSlider"
+                        min="50"
+                        max="2000"
+                        step="25"
+                        value="425"
+                    >
+
+                    <p>
+                        Use your average invoice, not your best week.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT: RESULTS -->
+            <div class="Neoma-results">
+
+                <div class="Neoma-results-header">
+
+                    <h2>MISSED CALL LEDGER</h2>
+
+                    <span>Estimated · monthly</span>
+
+                </div>
+
+
+                <div class="Neoma-results-body">
+
+                    <div class="Neoma-result-row">
+                        <span>Calls missed per month</span>
+                        <strong id="missedCallsResult">73</strong>
+                    </div>
+
+                    <div class="Neoma-result-row">
+                        <span>Jobs lost per month</span>
+                        <strong id="lostJobsResult">33</strong>
+                    </div>
+
+                    <div class="Neoma-result-row">
+                        <span>Revenue walking away</span>
+                        <strong id="lostRevenueResult">$13,912</strong>
+                    </div>
+
+                    <div class="Neoma-result-row">
+                        <span>Neoma: Crew plan</span>
+                        <strong>−$399</strong>
+                    </div>
+
+
+                    <div class="Neoma-result-divider"></div>
+
+
+                    <div class="Neoma-recovered-row">
+                        <span>Recovered per month</span>
+
+                        <strong id="recoveredResult">
+                            $13,513
+                        </strong>
+                    </div>
+
+
+                    <div class="Neoma-result-row Neoma-roi-row">
+                        <span>Return on spend</span>
+                        <strong id="roiResult">35×</strong>
+                    </div>
+
+
+                    <p class="Neoma-disclaimer">
+                        Estimate only, based on the numbers you entered.
+                        Neoma won't book every call, a real audit of your line
+                        usually lands within 15% of this figure.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CTA BUTTONS -->
+
+        <div class="Neoma-calculator-actions">
+
+            <a href="#neoma" class="Neoma-demo-button">
+                <span class="Neoma-demo-icon">M</span>
+                Try the live demo
+            </a>
+
+            <a href="#contact" class="Neoma-consult-button">
+                Book a consultation
+                <span>↗</span>
+            </a>
+
+        </div>
+
+    </section>
+
     <!-- ── PROCESS ── -->
     <section id="process">
         <div class="process-stars"></div>
