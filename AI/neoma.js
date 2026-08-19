@@ -248,15 +248,15 @@ function initializeNeoma() {
     function addUserMessage(message) {
 
         const bubble = document.createElement("div");
-
         bubble.className = "user-message";
 
-        bubble.innerHTML = `<p>${message}</p>`;
+        const p = document.createElement("p");
+        p.textContent = message;
 
+        bubble.appendChild(p);
         chatArea.appendChild(bubble);
 
         scrollBottom();
-
     }
 
     function showTyping() {
@@ -290,15 +290,15 @@ function initializeNeoma() {
     function addBotMessage(message) {
 
         const bubble = document.createElement("div");
-
         bubble.className = "bot-message";
 
-        bubble.innerHTML = `<p>${message}</p>`;
+        const p = document.createElement("p");
+        p.textContent = message;
 
+        bubble.appendChild(p);
         chatArea.appendChild(bubble);
 
         scrollBottom();
-
     }
 
     function addCard(title, description, buttons) {
@@ -522,80 +522,142 @@ function initializeNeoma() {
 
     }
 
+    function validateName(name) {
+        const value = name.trim();
+
+        // 2–50 characters, letters, spaces, apostrophes and hyphens
+        return /^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]{2,50}$/.test(value);
+    }
+
+    function validateEmail(email) {
+        const value = email.trim();
+
+        return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
+    }
+
+    function validatePhone(phone) {
+        const digits = phone.replace(/\D/g, "");
+
+        // Indian mobile number
+        return /^(?:91)?[6-9]\d{9}$/.test(digits);
+    }
+
+    function normalizePhone(phone) {
+        const digits = phone.replace(/\D/g, "");
+
+        if (digits.length === 10) {
+            return "+91" + digits;
+        }
+
+        if (digits.length === 12 && digits.startsWith("91")) {
+            return "+" + digits;
+        }
+
+        return null;
+    }
+
     function handleLead(answer) {
 
         switch (leadStep) {
 
             case 1:
 
-                lead.name = answer;
+                if (!validateName(answer)) {
+                    addBotMessage(
+                        "Hmm, that doesn't look like a valid name. Please enter your name using letters only."
+                    );
+                    return;
+                }
+
+                lead.name = answer.trim();
 
                 leadStep = 2;
 
                 addBotMessage(
-
                     "Nice to meet you, " + lead.name +
-
                     ".\n\nWhat's your email address?"
-
                 );
 
                 break;
 
+
             case 2:
 
-                lead.email = answer;
+                if (!validateEmail(answer)) {
+                    addBotMessage(
+                        "That doesn't look like a valid email address. Please enter something like name@example.com."
+                    );
+                    return;
+                }
+
+                lead.email = answer.trim().toLowerCase();
 
                 leadStep = 3;
 
                 addBotMessage(
-
                     "Perfect.\n\nWhat's the best phone number to reach you?"
-
                 );
 
                 break;
 
+
             case 3:
 
-                lead.phone = answer;
+                if (!validatePhone(answer)) {
+                    addBotMessage(
+                        "That doesn't look like a valid Indian phone number. Please enter your 10-digit mobile number."
+                    );
+                    return;
+                }
+
+                lead.phone = normalizePhone(answer);
 
                 leadStep = 4;
 
                 addBotMessage(
-
                     "Great.\n\nTell me a little about your business."
-
                 );
 
                 break;
 
+
             case 4:
 
-                lead.business = answer;
+                if (answer.trim().length < 2) {
+                    addBotMessage(
+                        "Please tell me a little about your business."
+                    );
+                    return;
+                }
+
+                lead.business = answer.trim();
 
                 leadStep = 5;
 
                 addBotMessage(
-
                     "Great.\n\nTell me your budget."
-
                 );
 
                 break;
 
+
             case 5:
 
-                lead.budget = answer;
+                if (answer.trim().length < 1) {
+                    addBotMessage(
+                        "Please enter your approximate budget."
+                    );
+                    return;
+                }
+
+                lead.budget = answer.trim();
 
                 leadStep = 0;
 
                 finishLead();
 
                 break;
-
         }
-
     }
 
     async function finishLead() {
