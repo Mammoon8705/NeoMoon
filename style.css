@@ -722,7 +722,7 @@ body.menu-open {
     position: absolute;
     inset: 0;
 
-    background-image: url('Pic/moon.png');
+    background-image: url('Pic/moon.webp');
 
     background-size: cover;
     background-position: center;

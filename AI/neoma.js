@@ -17,7 +17,11 @@ const html = `
 
         <div class="pulse"></div>
 
-        <img src="Pic/logo.png" alt="Neoma">
+        <img
+            src="Pic/logo.webp"
+            alt="Neoma"
+            width="128"
+            height="128">
 
     </button>
 
@@ -33,7 +37,11 @@ const html = `
 
         <div class="neoma-profile">
 
-            <img src="Pic/logo.png" alt="Neoma">
+            <img
+                src="Pic/logo.webp"
+                alt="Neoma"
+                width="128"
+                height="128">
 
             <div>
 
