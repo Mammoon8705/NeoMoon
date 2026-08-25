@@ -171,34 +171,28 @@ function updateActiveServiceCard() {
         card.classList.remove('active');
     });
 
-
     let closest = serviceCards[0];
-
     let closestDistance = Infinity;
-
 
     serviceCards.forEach(card => {
 
+        const rect =
+            card.getBoundingClientRect();
+
         const center =
-            card.offsetLeft -
-            servicesTimeline.scrollLeft +
-            card.offsetWidth / 2;
+            rect.left + rect.width / 2;
 
         const distance =
             Math.abs(
                 center - window.innerWidth / 2
             );
 
-
         if (distance < closestDistance) {
-
             closestDistance = distance;
             closest = card;
-
         }
 
     });
-
 
     closest.classList.add('active');
 }
@@ -528,6 +522,8 @@ const processCards = document.querySelectorAll('.timeline-item');
 
 function updateActiveCard() {
 
+    if (!processCards.length) return;
+
     processCards.forEach(card => {
         card.classList.remove('active');
     });
@@ -537,10 +533,10 @@ function updateActiveCard() {
 
     processCards.forEach(card => {
 
+        const rect = card.getBoundingClientRect();
+
         const center =
-            card.offsetLeft -
-            servicesTimeline.scrollLeft +
-            card.offsetWidth / 2;
+            rect.left + rect.width / 2;
 
         const distance =
             Math.abs(
@@ -551,11 +547,9 @@ function updateActiveCard() {
             closestDistance = distance;
             closest = card;
         }
-
     });
 
     closest.classList.add('active');
-
 }
 
 const timeline =
