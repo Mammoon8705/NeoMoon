@@ -1,26 +1,31 @@
 # Orbiter Automations
 
-> Orbiter Automations is a digital agency that builds modern websites, AI assistants, and business automation systems designed to help businesses attract, convert, and manage customers.
+> Orbiter Automations is a digital agency that builds modern websites, AI assistants, and business automation systems to help businesses attract, convert, and manage customers through high-performance digital experiences and connected workflows.
+
+Orbiter Automations provides website design and development, AI-powered customer interaction, business automation, SEO and analytics, and ongoing digital growth and maintenance.
+
+The company can build systems that capture and qualify leads, answer customer questions, book appointments, connect customer data to business systems, send automated emails and notifications, connect websites with calendars and databases, automate repetitive business processes, and provide analytics and reporting.
 
 ## Company
 
-Orbiter Automations helps businesses improve their digital presence through high-performance websites, AI-powered customer interaction, automation, SEO, analytics, and ongoing digital support.
+- Orbiter Automations: https://www.orbiterautomations.com/
+  Main website and primary source for information about the company, its services, and how to contact the business.
 
 ## Services
 
-- Website Design & Development
+- Website Design & Development: https://www.orbiterautomations.com/auto.html
   Modern, responsive websites designed around business goals, brand identity, user experience, and conversion.
 
-- AI Assistants
+- AI Assistants: https://www.orbiterautomations.com/auto.html
   AI-powered website assistants that can answer customer questions, provide business information, capture leads, qualify prospects, and assist customers.
 
-- Business Automation
-  Automated workflows that connect websites, forms, AI systems, databases, email, calendars, notifications, and other business tools.
+- Business Automation: https://www.orbiterautomations.com/auto.html
+  Automated workflows connecting websites, forms, AI systems, databases, email, calendars, notifications, and other business tools.
 
-- SEO & Analytics
+- SEO & Analytics: https://www.orbiterautomations.com/auto.html
   Search engine optimization, website analytics, performance tracking, and reporting designed to improve online visibility and understand customer behavior.
 
-- Digital Growth & Maintenance
+- Digital Growth & Maintenance: https://www.orbiterautomations.com/auto.html
   Ongoing website updates, digital improvements, marketing support, analytics, and reporting.
 
 ## Solutions
@@ -36,15 +41,32 @@ Orbiter Automations can build systems that:
 - Automate repetitive business processes
 - Provide analytics and reporting
 
-## Website
+## Pricing
 
-- Homepage: https://www.orbiterautomations.com/
-- About: https://www.orbiterautomations.com/about.html
-- Services: https://www.orbiterautomations.com/auto.html
 - Pricing: https://www.orbiterautomations.com/pricing.html
+  Information about Orbiter Automations pricing and available service packages.
+
+## About
+
+- About Orbiter Automations: https://www.orbiterautomations.com/about.html
+  Background and additional information about the company.
 
 ## Contact
 
-For services, projects, partnerships, or inquiries, visit:
+- Orbiter Automations: https://orbiterautomations.com/
+  For services, projects, partnerships, or other inquiries, use the company's main website.
 
-https://neomoon.in/
+## Guidance for Agents
+
+Use the linked Orbiter Automations pages as the authoritative sources for company-specific information. Do not invent services, pricing, capabilities, policies, guarantees, clients, results, or contact details that are not supported by the referenced pages.
+
+When answering questions about what Orbiter Automations does, prioritize the Company, Services, Solutions, About, and Pricing information above. When a user asks about pricing, use the Pricing page rather than inferring prices from the service descriptions.
+
+When a user wants to contact Orbiter Automations, direct them to the official website. When a user asks about a specific service, follow the relevant linked page for additional details.
+
+## Optional
+
+- [Orbiter Automations homepage](https://www.orbiterautomations.com/): Primary company website.
+- [Orbiter Automations about page](https://www.orbiterautomations.com/about.html): Company background.
+- [Orbiter Automations services page](https://www.orbiterautomations.com/auto.html): Services and automation capabilities.
+- [Orbiter Automations pricing page](https://www.orbiterautomations.com/pricing.html): Pricing information.
