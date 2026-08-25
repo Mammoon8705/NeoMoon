@@ -2498,6 +2498,13 @@ body.menu-open {
     text-transform: uppercase
 }
 
+.about-photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 .about-badge {
     position: absolute;
     bottom: 1.5rem;
