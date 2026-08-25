@@ -538,9 +538,9 @@ function updateActiveCard() {
     processCards.forEach(card => {
 
         const center =
-    card.offsetLeft -
-    servicesTimeline.scrollLeft +
-    card.offsetWidth / 2;
+            card.offsetLeft -
+            servicesTimeline.scrollLeft +
+            card.offsetWidth / 2;
 
         const distance =
             Math.abs(
