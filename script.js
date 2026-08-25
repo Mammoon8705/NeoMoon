@@ -211,10 +211,18 @@ const servicesTimeline =
 
 if (servicesTimeline) {
 
-    servicesTimeline.addEventListener(
-        'scroll',
-        updateActiveServiceCard
-    );
+    let serviceScrollTicking = false;
+
+    servicesTimeline.addEventListener('scroll', () => {
+        if (!serviceScrollTicking) {
+            requestAnimationFrame(() => {
+                updateActiveServiceCard();
+                serviceScrollTicking = false;
+            });
+
+            serviceScrollTicking = true;
+        }
+    });
 
 }
 
@@ -554,10 +562,18 @@ function updateActiveCard() {
 const timeline =
     document.querySelector('.process-timeline');
 
-timeline.addEventListener(
-    'scroll',
-    updateActiveCard
-);
+let processScrollTicking = false;
+
+timeline.addEventListener('scroll', () => {
+    if (!processScrollTicking) {
+        requestAnimationFrame(() => {
+            updateActiveCard();
+            processScrollTicking = false;
+        });
+
+        processScrollTicking = true;
+    }
+});
 
 updateActiveCard();
 
