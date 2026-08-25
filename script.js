@@ -179,11 +179,10 @@ function updateActiveServiceCard() {
 
     serviceCards.forEach(card => {
 
-        const rect =
-            card.getBoundingClientRect();
-
         const center =
-            rect.left + rect.width / 2;
+            card.offsetLeft -
+            servicesTimeline.scrollLeft +
+            card.offsetWidth / 2;
 
         const distance =
             Math.abs(
@@ -538,10 +537,10 @@ function updateActiveCard() {
 
     processCards.forEach(card => {
 
-        const rect = card.getBoundingClientRect();
-
         const center =
-            rect.left + rect.width / 2;
+    card.offsetLeft -
+    servicesTimeline.scrollLeft +
+    card.offsetWidth / 2;
 
         const distance =
             Math.abs(
