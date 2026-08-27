@@ -347,7 +347,7 @@ function initializeNeoma() {
 
         try {
 
-            const response = await fetch("https://mamoon.app.n8n.cloud/webhook-test/neoma/message", {
+            const response = await fetch("https://moonneha.app.n8n.cloud/webhook/neoma/lead", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -694,7 +694,7 @@ function initializeNeoma() {
 
         try {
             const response = await fetch(
-                "https://mamoon.app.n8n.cloud/webhook-test/neoma/lead",
+                "https://moonneha.app.n8n.cloud/webhook/neoma/lead",
                 {
                     method: "POST",
 
