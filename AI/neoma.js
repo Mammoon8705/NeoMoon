@@ -482,6 +482,8 @@ function initializeNeoma() {
         // Meeting
         if (text.includes("meeting") ||
             text.includes("call") ||
+            text.includes("consultation") ||
+            text.includes("book") ||
             text.includes("appointment")) {
 
             addCard(
